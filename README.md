@@ -2,9 +2,9 @@
 
 Eth Wager aims to be a platform that allows individuals to wager whether or not a large cap nft project will increase or decrease in price. I aim to rewarding members with an coin (WAGER), which I have created. This coin will have very limited value and will not incentivize users to drop the floor price below the fair market value.
 
-I have wanted to create this project for several months and I aim to challenge myself with this application. As the platformed is developed, buy-ins may be introduced and more precise reward distribution may be necessary. For the time being, the application will be a user-friendly website that allows individuals to browse large-cap NFTs and receive my coin as a reward for being correct.
+I have wanted to create this project for several months and I aim to challenge myself with this application. As the platformed is developed, buy-ins may be introduced and more precise reward distribution may be necessary. For the time being, the application will be a user-friendly website that allows individuals to bet on large-cap NFT floor prices and receive my coin as a reward for being correct.
 
-The main mechanism of this project is for a user to choose a date for their wager to expire, which will determine if they are in the money or out of the money. If the user’s price-action prediction is correct more days than not until that day, they will be rewarded. This limits bad actors dropping the floor price by a tremendous value, even if it is picked up immediately due to adequate demand. This will limit the likelihood of gaming the system.
+The main mechanism of this project is for a user to first pick a project, their prediction, and a date for their wager to expire. If the user’s price-action prediction is correct more days than not until that day, they will be rewarded. This limits bad actors dropping the floor price by a tremendous value, even if it is picked up immediately due to adequate demand. This will limit the likelihood of gaming the system.
 
 
 Requirements V1
