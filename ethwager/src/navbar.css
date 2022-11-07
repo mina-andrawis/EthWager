@@ -1,13 +1,18 @@
 #nav {
 	margin:0 auto;
+  text-align: center;
   padding: 0;
   width: auto;
-  background-color:#b2b580;
 }
 #nav li {
-	display:inline;
+	display:inline-block;
+  list-style-type: none;
 	padding:0;
 	margin:0;
+}
+
+#nav ul{
+  display: inline-block;
 }
 
 #nav a:link,
@@ -17,6 +22,7 @@
 	padding:20px 40px;
 	float:left;
 	width:auto;
+  font-size: calc(10px + 2vmin);
 	border-right:1px solid #42432d;
 	text-decoration:none;
 	font:bold 1em/1em Arial, Helvetica, sans-serif;
