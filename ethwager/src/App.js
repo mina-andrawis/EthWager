@@ -17,8 +17,6 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/my-account' element={<MyAccount/>} />
-          //<Route path='/' exact component={Home} />
-
         </Routes>
       </BrowserRouter>
 

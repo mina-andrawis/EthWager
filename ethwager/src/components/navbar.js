@@ -1,8 +1,9 @@
 import React from 'react';
 import {  Link } from "react-router-dom";
+import "../navbar.css"
 const Navbar= () =>{
   return (
-  <div>
+  <ul id="nav">
     <li>
       <Link to="/">Home</Link>
     </li>
@@ -13,9 +14,9 @@ const Navbar= () =>{
       <Link to="/my-account">My Account</Link>
     </li>
     <li>
-      <Link to="/developed-by-mina">Developed by Mina</Link>
+      <a href="https://github.com/mina-andrawis" target="_blank">Developed by Mina</a>
     </li>
-  </div>
+  </ul>
   );
 }
 export default Navbar;

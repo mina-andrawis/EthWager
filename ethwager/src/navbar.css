@@ -1,0 +1,31 @@
+#nav {
+	margin:0 auto;
+  padding: 0;
+  width: auto;
+  background-color:#b2b580;
+}
+#nav li {
+	display:inline;
+	padding:0;
+	margin:0;
+}
+
+#nav a:link,
+#nav a:visited {
+  color:#000;
+	background:#b2b580;
+	padding:20px 40px;
+	float:left;
+	width:auto;
+	border-right:1px solid #42432d;
+	text-decoration:none;
+	font:bold 1em/1em Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	text-shadow: 2px 2px 2px #555;
+}
+
+#nav a:hover,
+#nav a:focus {
+	color:#fff;
+	background:#727454;
+}
