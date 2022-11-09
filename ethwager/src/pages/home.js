@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectList from '../components/projectList.js'
+import ProjectList from '../components/projectsTable.js'
 const Home = () =>{
   return (
     <div>

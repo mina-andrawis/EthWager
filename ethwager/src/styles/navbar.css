@@ -15,7 +15,7 @@
 #nav a:link,
 #nav a:visited {
   color:#000;
-	background:#b2b580;
+	background:#009879;
 	padding:20px 40px;
 	float:left;
 	width:auto;
@@ -30,5 +30,4 @@
 #nav a:hover,
 #nav a:focus {
 	color:#fff;
-	background:#727454;
 }
