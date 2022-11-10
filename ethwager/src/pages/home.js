@@ -1,8 +1,9 @@
 import React from 'react';
-import ProjectList from '../components/displayTable.js'
+import ProjectList from '../components/projectsTable.js'
 const Home = () =>{
   return (
     <div>
+      <h3>Home</h3>
       <div>
         <ProjectList />
       </div>
