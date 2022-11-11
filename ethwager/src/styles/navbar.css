@@ -8,7 +8,6 @@
 	display:inline-block;
 }
 
-
 #nav a:link,
 #nav a:visited {
   color:#000;
@@ -24,7 +23,6 @@
 	text-transform:uppercase;
 	text-shadow: 2px 2px 2px #555;
 }
-
 
 #nav a:hover,
 #nav a:focus {
