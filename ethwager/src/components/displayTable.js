@@ -1,29 +1,51 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {  Link } from "react-router-dom";
 import "../styles/displayTable.css"
-class DisplayTable extends React.Component{
 
-  constructor(props){
+class DisplayTable extends Component {
+
+  constructor(props)
+  {
     super(props);
     this.state = {
-      list:[]
+      items: [],
+      isLoaded: false,
     }
   }
 
-  callAPI() {
-    const sdk = require('api')('@opensea/v1.0#10fy4ug30l7qohm4q');
-
-    sdk.retrievingCollectionStats({collection_slug: 'doodles-official'})
-      .then(({ data }) => console.log(data))
-      .catch(err => console.error(err));
+  componentDidMount(){
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(json => {
+      this.setState({
+        isLoaded:true,
+        items: json,
+      })
+    });
   }
 
-  render() {
-    return (
-      <div>
+render() {
 
-      </div>
-    )
+  var  {isLoaded, items} = this.state;
+
+  if (!isLoaded){
+    return <div>Loading...</div>;
+  }
+  else {
+      return (
+        <div className="DisplayTable">
+          <ul>
+            {items.map(item => (
+              <li key={item.id}>
+                Name: {item.name} | Email: {item.email}
+              </li>
+            ))}
+          </ul>
+
+        </div>
+      );
+    }
   }
 }
-export default ProjectsTable;
+
+export default DisplayTable;
