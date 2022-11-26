@@ -1,56 +1,31 @@
-import React, {Component} from 'react';
-import {  Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import "../styles/displayTable.css"
 
-class DisplayTable extends Component {
+const DisplayTable = () => {
+  const [floor, setFloor] = useState("");
 
-  constructor(props)
-  {
-    super(props);
-    this.state = {
-      items: [],
-      isLoaded: false,
-    }
-  }
+  useEffect(() => {
+    const url = "https://api.opensea.io/api/v1/collection/doodles-official/stats"
 
-  componentDidMount(){
-    const options = {method: 'GET', headers: {accept: 'application/json'}};
 
-    fetch('https://api.opensea.io/api/v1/collection/doodles-official/stats', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-    .then(json => {
-      this.setState({
-        isLoaded:true,
-        items: json,
-      })
-    })
-    .catch(err => console.error(err));
+    const fetchData = async () => {
+      try {
+          const response = await fetch(url);
+          const json = await response.json();
+          setFloor(json.stats.floor_price)
+      } catch (error) {
+          console.log("error", error);
+      }
+    };
 
-  }
+    fetchData();  
+  }, []);
 
-render() {
+  return (
+    <div>{floor}</div>
+  );
 
-  var  {isLoaded, items} = this.state;
 
-  if (!isLoaded){
-    return <div>Loading...</div>;
-  }
-  else {
-      return (
-        <div className="DisplayTable">
-          <ul>
-            {(items || []).map(item => (
-            <li key={item.id}>
-              Name: {item.count}
-            </li>
-          ))}
-          </ul>
-
-        </div>
-      );
-    }
-  }
-}
+};
 
 export default DisplayTable;
