@@ -3,6 +3,7 @@ import "../styles/displayTable.css"
 
 const DisplayTable = () => {
   const [floor, setFloor] = useState("");
+  const [age, setAge] = useState("");
 
   const url = "https://api.opensea.io/api/v1/collection/doodles-official/stats"
 
@@ -21,7 +22,24 @@ const DisplayTable = () => {
   }, []);
 
   return (
-    <div>{floor}</div>
+    <div className="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Floor Price</th>
+          <th>Age of Project</th>
+          <th>Volume (30d)</th>
+          <th>Price Change (30d)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Doodles</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   );
 };
 
