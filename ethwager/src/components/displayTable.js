@@ -7,10 +7,9 @@ const DisplayTable = () => {
   const [volume, setVolume] = useState("");
   const [priceChange, setPriceChange] = useState("");
 
-
-
-  const url = "https://api.opensea.io/api/v1/collection/doodles-official/stats"
-
+  const url = "https://api.opensea.io/api/v1/collection/boredapeyachtclub/stats"
+  const cryptoPunksUrl = "https://api.opensea.io/api/v1/collection/cryptopunks/stats"
+  
   const fetchData = async () => {
     try {
         const response = await fetch(url);
@@ -46,7 +45,7 @@ const DisplayTable = () => {
       </thead>
       <tbody>
         <tr>
-          <td>Doodles</td>
+          <td>Bored Ape Yacht Club</td>
           <td>{floorPrice} Ξ</td>
           <td>{fMarketCap} Ξ</td>
           <td>{fVolume} Ξ</td>
