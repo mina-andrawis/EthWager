@@ -28,6 +28,10 @@ const DisplayTable = () => {
     fetchData(url);  
   }, []);
 
+  const fMarketCap = parseFloat(marketCap).toFixed(2);
+  const fVolume = parseFloat(volume).toFixed(0);
+  const fPriceChange = parseFloat(priceChange).toFixed(2);
+
   return (
     <div className="styled-table">
     <table>
@@ -43,10 +47,10 @@ const DisplayTable = () => {
       <tbody>
         <tr>
           <td>Doodles</td>
-          <td>{floorPrice} eth</td>
-          <td>{marketCap} eth</td>
-          <td>{volume} eth</td>
-          <td>{priceChange} eth</td>
+          <td>{floorPrice} Ξ</td>
+          <td>{fMarketCap} Ξ</td>
+          <td>{fVolume} Ξ</td>
+          <td>{fPriceChange} Ξ</td>
         </tr>
       </tbody>
     </table>
