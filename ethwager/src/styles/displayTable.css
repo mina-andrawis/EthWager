@@ -4,7 +4,7 @@
     font-size: 0.8em;
     overflow:auto;
     max-width: fit-content;
-    font-family: sans-serif;
+    font-family: Optima;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -30,6 +30,7 @@ button.selection{
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    font-family: monospace;
     font-size: 16px;
 }
 

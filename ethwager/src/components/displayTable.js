@@ -32,7 +32,7 @@ return (
             <td>{nft.stats.floor_price} Ξ</td>
             <td>{nft.stats.market_cap} Ξ</td>
             <td>{nft.stats.total_volume} Ξ</td>
-            <td><button className="selection"> button</button></td>
+            <td><button className="selection">bid</button></td>
           </tr>
         ))}
       </tbody>
