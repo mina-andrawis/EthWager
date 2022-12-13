@@ -2,37 +2,18 @@ import React, { useEffect, useState } from "react";
 import "../styles/displayTable.css"
 
 const DisplayTable = () => {
-  const [floorPrice, setFloorPrice] = useState("");
-  const [marketCap, setMarketCap] = useState("");
-  const [volume, setVolume] = useState("");
-  const [priceChange, setPriceChange] = useState("");
-
-  const url = "https://api.opensea.io/api/v1/collection/boredapeyachtclub/stats"
-  const cryptoPunksUrl = "https://api.opensea.io/api/v1/collection/cryptopunks/stats"
-  
-  const fetchData = async () => {
-    try {
-        const response = await fetch(url);
-        const json = await response.json();
-        setFloorPrice(json.stats.floor_price)
-        setMarketCap(json.stats.market_cap)
-        setVolume(json.stats.total_volume)
-        setPriceChange(json.stats.thirty_day_difference)
-    } catch (error) {
-        console.log("error", error);
-    }
-  };
+  const [nfts, setNfts] = useState([]);
 
   useEffect(() => {
-    fetchData(url);  
+    fetch('https://api.opensea.io/api/v1/collections?offset=0&limit=15')
+      .then(response => response.json())
+      .then(data => {
+        setNfts(data.collections);
+      });
   }, []);
 
-  const fMarketCap = parseFloat(marketCap).toFixed(2);
-  const fVolume = parseFloat(volume).toFixed(0);
-  const fPriceChange = parseFloat(priceChange).toFixed(2);
-
-  return (
-    <div className="styled-table">
+return (
+  <div className="styled-table">
     <table>
       <thead>
         <tr>
@@ -44,17 +25,20 @@ const DisplayTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Bored Ape Yacht Club</td>
-          <td>{floorPrice} Ξ</td>
-          <td>{fMarketCap} Ξ</td>
-          <td>{fVolume} Ξ</td>
-          <td>{fPriceChange} Ξ</td>
-        </tr>
+        {nfts.map(nft => (
+          <tr key={nft.id}>
+            <td>{nft.name}</td>
+            <td>{nft.stats.floor_price} Ξ</td>
+            <td>{nft.stats.market_cap} Ξ</td>
+            <td>{nft.stats.total_volume} Ξ</td>
+            <td>{nft.stats.price_change} Ξ</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   </div>
-  );
-};
+
+)
+}
 
 export default DisplayTable;
