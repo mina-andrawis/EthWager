@@ -21,7 +21,8 @@ return (
           <th>Floor Price</th>
           <th>Market Cap</th>
           <th>Volume (30d)</th>
-          <th>Price Change (30d)</th>
+          <th></th>
+          {/*<th>Price Change (30d)</th>*/}
         </tr>
       </thead>
       <tbody>
@@ -31,7 +32,7 @@ return (
             <td>{nft.stats.floor_price} Ξ</td>
             <td>{nft.stats.market_cap} Ξ</td>
             <td>{nft.stats.total_volume} Ξ</td>
-            <td>{nft.stats.price_change} Ξ</td>
+            <td><button className="selection"> button</button></td>
           </tr>
         ))}
       </tbody>

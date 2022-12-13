@@ -20,6 +20,19 @@
     text-align: center;
 }
 
+button.selection{
+    background-color: #E3DAC9; /* Green */
+    border: none;
+    color: #1C251C;
+    border-radius: 35px;
+    padding: 10px 25px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
