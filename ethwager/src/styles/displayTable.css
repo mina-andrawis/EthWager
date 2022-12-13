@@ -18,11 +18,12 @@
 .styled-table td {
     padding: 12px 15px;
     text-align: center;
+    border:none;
 }
 
 button.selection{
     background-color: #E3DAC9; /* Green */
-    border: none;
+    border: none ;
     color: #1C251C;
     border-radius: 35px;
     padding: 10px 25px;
@@ -76,5 +77,7 @@ button.selection{
 
     .styled-table {
         font-size: 0.9em;
+        margin-left:2em;
+        margin-right:2em;
     }
   }
