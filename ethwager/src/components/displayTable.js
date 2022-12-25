@@ -61,7 +61,7 @@ const DisplayTable = () => {
               <td>{projectNames[id++]}</td>
               <td>{format(nft.stats.floor_price)}</td>
               <td>{format(nft.stats.market_cap)}</td>
-              <td>{format(nft.stats.total_volume)}</td>
+              <td>{format(nft.stats.thirty_day_volume)}</td>
               <td>{format(nft.stats.thirty_day_difference)}</td>
 
               <td><button className="selection">bid</button></td>
