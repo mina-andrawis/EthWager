@@ -22,7 +22,7 @@
 }
 
 button.selection{
-    background-color: #E3DAC9; /* Green */
+    background-color: #E3DAC9;
     border: none ;
     color: #1C251C;
     border-radius: 35px;
@@ -33,6 +33,11 @@ button.selection{
     display: inline-block;
     font-family: monospace;
     font-size: 16px;
+}
+
+button.selection:hover{
+    background-color: #009879;
+    color:white;
 }
 
 /* For mobile phones: */
