@@ -1,18 +1,33 @@
 import React, { useEffect, useState } from "react";
 import "../styles/displayTable.css"
 
-const DisplayTable = () => {
-  const [nfts, setNfts] = useState([]);
+var projectSlugs = [
+'cryptopunks',
+'boredapeyachtclub',
+'mutant-ape-yacht-club',
+'otherdeed',
+'azuki',
+'clonex',
+'proof-moonbirds',
+'sandbox',
+'doodles-official',
+'meebits',
+]
 
-  useEffect(() => {
-    fetch('https://api.opensea.io/api/v1/collections?offset=0&limit=15')
-      .then(response => response.json())
-      .then(data => {
-        setNfts(data.collections);
-      });
-  }, []);
+const DisplayTable = () => {
+const [nfts, setNfts] = useState([]);
+
+useEffect(() => {
+  Promise.all(projectSlugs.map(slug =>
+    fetch(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
+    .then(response => response.json())
+    )).then(responses => {
+      setNfts(responses);
+  });
+}, []);
 
 return (
+
   <div className="styled-table">
     <table>
       <thead>
@@ -38,7 +53,6 @@ return (
       </tbody>
     </table>
   </div>
-
 )
 }
 
