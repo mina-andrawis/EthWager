@@ -43,13 +43,11 @@ const DisplayTable = () => {
 
   var id = 0;
   return (
-
-    
     <div className="styled-table">
       <table>
         <thead>
           <tr>
-            <th>Project Name</th>
+            <th>Collection</th>
             <th>Floor Price</th>
             <th>Market Cap</th>
             <th>Volume (30d)</th>
