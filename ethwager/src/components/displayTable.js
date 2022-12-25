@@ -22,9 +22,17 @@ useEffect(() => {
     fetch(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
     .then(response => response.json())
     )).then(responses => {
+      console.log(responses)
       setNfts(responses);
   });
 }, []);
+
+function format( num ){
+  return ( Math.floor(num * 1000)/1000 )  // slice decimal digits after the 2nd one
+  .toFixed(2)  // format with two decimal places
+  .substr(0,4) // get the leading four characters
+  .replace(/\.$/,''); // remove trailing decimal place separator
+}
 
 return (
 
@@ -44,9 +52,9 @@ return (
         {nfts.map(nft => (
           <tr key={nft.id}>
             <td>{nft.name}</td>
-            <td>{nft.stats.floor_price} Ξ</td>
-            <td>{nft.stats.market_cap} Ξ</td>
-            <td>{nft.stats.total_volume} Ξ</td>
+            <td>{nft.stats.floor_price} ETH</td>
+            <td>{format(nft.stats.market_cap)} ETH</td>
+            <td>{format(nft.stats.total_volume)} ETH</td>
             <td><button className="selection">bid</button></td>
           </tr>
         ))}
@@ -54,6 +62,7 @@ return (
     </table>
   </div>
 )
+
 }
 
 export default DisplayTable;
