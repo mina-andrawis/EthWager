@@ -28,10 +28,13 @@ useEffect(() => {
 }, []);
 
 function format( num ){
-  return ( Math.floor(num * 1000)/1000 )  // slice decimal digits after the 2nd one
+
+  var formatted = (Math.floor(num * 1000)/1000)  // slice decimal digits after the 2nd one
   .toFixed(2)  // format with two decimal places
   .substr(0,4) // get the leading four characters
   .replace(/\.$/,''); // remove trailing decimal place separator
+
+  return ( formatted == 0.00 ? "—" : `${formatted} ETH`)
 }
 
 return (
@@ -44,17 +47,19 @@ return (
           <th>Floor Price</th>
           <th>Market Cap</th>
           <th>Volume (30d)</th>
+          {<th>Volume Delta (30d)</th>}
           <th></th>
-          {/*<th>Price Change (30d)</th>*/}
         </tr>
       </thead>
       <tbody>
         {nfts.map(nft => (
           <tr key={nft.id}>
             <td>{nft.name}</td>
-            <td>{nft.stats.floor_price} ETH</td>
-            <td>{format(nft.stats.market_cap)} ETH</td>
-            <td>{format(nft.stats.total_volume)} ETH</td>
+            <td>{format(nft.stats.floor_price)}</td>
+            <td>{format(nft.stats.market_cap)}</td>
+            <td>{format(nft.stats.total_volume)}</td>
+            <td>{format(nft.stats.thirty_day_difference)}</td>
+
             <td><button className="selection">bid</button></td>
           </tr>
         ))}
