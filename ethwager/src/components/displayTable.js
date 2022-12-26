@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BidModal from "./bidModal.js"
 import "../styles/displayTable.css"
 
 var projects = {
@@ -19,6 +20,7 @@ const projectNames = Object.values(projects);
 const DisplayTable = () => {
 
   const [nfts, setNfts] = useState([]);
+  const [openBidModel, setOpenBidModal] = useState(-1);
 
 
   useEffect(() => {
@@ -42,34 +44,47 @@ const DisplayTable = () => {
   }
 
   var id = 0;
-  return (
-    <div className="styled-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Collection</th>
-            <th>Floor Price</th>
-            <th>Market Cap</th>
-            <th>Volume (30d)</th>
-            {<th>Volume Delta (30d)</th>}
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {nfts.map(nft => (
-            <tr key={id}>
-              <td>{projectNames[id++]}</td>
-              <td>{format(nft.stats.floor_price)}</td>
-              <td>{format(nft.stats.market_cap)}</td>
-              <td>{format(nft.stats.thirty_day_volume)}</td>
-              <td>{format(nft.stats.thirty_day_difference)}</td>
 
-              <td><button className="selection">bid</button></td>
+  return (
+
+    <div>
+      {/*The setOpenBidModal function is passed as a prop to the BidModal component.
+       This function can be used within the BidModal component to change the value of openBidModel*/}
+      {openBidModel != -1 && <BidModal modalControl={setOpenBidModal} />}
+      <div className="styled-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Collection</th>
+              <th>Floor Price</th>
+              <th>Market Cap</th>
+              <th>Volume (30d)</th>
+              <th>Volume Delta (30d)</th>
+              <th></th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {nfts.map((nft,index) => (
+              <tr key={index}>
+                <td>{projectNames[index]}</td>
+                <td>{format(nft.stats.floor_price)}</td>
+                <td>{format(nft.stats.market_cap)}</td>
+                <td>{format(nft.stats.thirty_day_volume)}</td>
+                <td>{format(nft.stats.thirty_day_difference)}</td>
+
+                <td>
+                  <button className="selection" 
+                  onClick={() => setOpenBidModal(index)}> bid </button>
+                </td>
+
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
+
+    
   )
 
 }
