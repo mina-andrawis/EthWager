@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/modal.css";
 
-function BidModal({ modalControl }) {
+function BidModal({ setModal, nfts}) {
 console.log("inside");
   return (
     <div className="modalBackground">
@@ -9,7 +9,7 @@ console.log("inside");
         <div className="titleCloseBtn">
           <button
             onClick={() => {
-                modalControl(-1);
+                setModal(-1);
             }}>
             X
           </button>
@@ -23,7 +23,7 @@ console.log("inside");
         <div className="footer">
           <button
             onClick={() => {
-                modalControl(-1);
+                setModal(-1);
             }}
             id="cancelBtn"
           >

@@ -1,27 +1,12 @@
 import React, { useEffect, useState } from "react";
 import BidModal from "./bidModal.js"
+import {projectNames, projectSlugs} from "../common.js"
 import "../styles/displayTable.css"
-
-var projects = {
-'cryptopunks':'Crypto Punks',
-'boredapeyachtclub':'Bored Ape Yacht Club',
-'mutant-ape-yacht-club':'Mutant Ape Yacht Club',
-'otherdeed':'Otherdeed for Otherside',
-'azuki':'Azuki',
-'clonex':'CLONE X - X TAKASHI MURAKAMI',
-'proof-moonbirds':'Moonbirds',
-'sandbox':'The Sandbox',
-'doodles-official':'Doodles',
-'meebits':'MeeBits',
-}
-const projectSlugs = Object.keys(projects);
-const projectNames = Object.values(projects);
 
 const DisplayTable = () => {
 
   const [nfts, setNfts] = useState([]);
   const [openBidModel, setOpenBidModal] = useState(-1);
-
 
   useEffect(() => {
     Promise.all(projectSlugs.map(slug =>
@@ -50,7 +35,7 @@ const DisplayTable = () => {
     <div>
       {/*The setOpenBidModal function is passed as a prop to the BidModal component.
        This function can be used within the BidModal component to change the value of openBidModel*/}
-      {openBidModel != -1 && <BidModal modalControl={setOpenBidModal} />}
+      {openBidModel != -1 && <BidModal setModal={setOpenBidModal} />}
       <div className="styled-table">
         <table>
           <thead>
