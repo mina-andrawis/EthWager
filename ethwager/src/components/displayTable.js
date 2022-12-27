@@ -5,8 +5,9 @@ import "../styles/displayTable.css"
 
 const DisplayTable = () => {
 
-  const [nfts, setNfts] = useState([]);
+  const [collections, setCollections] = useState([]);
   const [openBidModel, setOpenBidModal] = useState(-1);
+  const [selectedProj, setSelectedProj] = useState('');
 
   useEffect(() => {
     Promise.all(projectSlugs.map(slug =>
@@ -14,7 +15,7 @@ const DisplayTable = () => {
       .then(response => response.json())
       )).then(responses => {
         console.log(responses)
-        setNfts(responses);
+        setCollections(responses);
     });
   }, []);
 
@@ -24,11 +25,20 @@ const DisplayTable = () => {
     return ( formatted == 0.00 ? "—" : `${formatted} ETH`)
   }
 
+  const handleOpenModal = (collection,index) => {
+    setOpenBidModal(index);
+    setSelectedProj(collection.stats);
+  };
+
   return (
+
     <div>
       {/*The setOpenBidModal function is passed as a prop to the BidModal component.
        This function can be used within the BidModal component to change the value of openBidModel*/}
-      {openBidModel != -1 && <BidModal setModal={setOpenBidModal} />}
+      {openBidModel != -1 && <BidModal 
+        setModal={setOpenBidModal}
+        modal={openBidModel}
+        proj={selectedProj} />}
       <div className="styled-table">
         <table>
           <thead>
@@ -42,23 +52,29 @@ const DisplayTable = () => {
             </tr>
           </thead>
           <tbody>
-            {nfts.map((nft,index) => (
+            {collections.map((collection,index) => (
               <tr key={index}>
                 <td>{projectNames[index]}</td>
-                <td>{format(nft.stats.floor_price)}</td>
-                <td>{format(nft.stats.market_cap)}</td>
-                <td>{format(nft.stats.thirty_day_volume)}</td>
-                <td>{format(nft.stats.thirty_day_difference)}</td>
+                <td>{format(collection.stats.floor_price)}</td>
+                <td>{format(collection.stats.market_cap)}</td>
+                <td>{format(collection.stats.thirty_day_volume)}</td>
+                <td>{format(collection.stats.thirty_day_difference)}</td>
                 <td>
+                  {console.log(index)}
                   <button className="selection"
-                  onClick={() => setOpenBidModal(index)}> bid </button>
+                  onClick={() => handleOpenModal(collection,index)}> bid </button>
                 </td>
+
               </tr>
             ))}
           </tbody>
         </table>
       </div>
     </div>
+
+    
   )
+
 }
+
 export default DisplayTable;

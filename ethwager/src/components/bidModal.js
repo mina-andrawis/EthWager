@@ -2,8 +2,10 @@ import React from "react";
 import {projectNames, projectSlugs} from "../common.js"
 import "../styles/modal.css";
 
-function BidModal({ setModal }) {
-console.log("inside");
+const BidModal = (props) => {
+    const {setModal, proj} = props;
+
+    console.log({proj});
 
   return (
     <div className="modalBackground">
@@ -17,9 +19,9 @@ console.log("inside");
           </button>
         </div>
         <div className="title">
-          <h1>The project you chose was: {projectNames.at(setModal)} </h1>
-            {console.log(projectNames.at(setModal))}
-            {console.log(setModal)}
+          <h1>The floor price for this project is: {(proj.floor_price)} ETH</h1>
+            {/*console.log({modal})*/}
+
 
         </div>
         <div className="body">
