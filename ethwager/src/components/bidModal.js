@@ -19,14 +19,28 @@ const BidModal = (props) => {
           </button>
         </div>
         <div className="title">
+            {/* add the name of the collection */}
           <h1>The floor price for this project is: {(proj.floor_price)} ETH</h1>
-            {/*console.log({modal})*/}
-
-
         </div>
-        <div className="body">
-          <p>The next page looks amazing. Hope you want to go there!</p>
+        <div className="top optionsRow">
+            <div className="bidQuestion">
+                <p>Are you bullish or bearish?</p>
+            </div>
+            <div className="bidButtons">
+                <button className="fancyButton bullishButton">Bullish</button>
+                <button className="fancyButton bearishButton">Bearish</button>
+            </div>
         </div>
+        <div className="bottom optionsRow" >
+            <div className="expirationQuestion">
+                <p>When shall this wager expire?</p>
+            </div>
+            <div className="expirationButtons">
+                <button className="fancyButton expirationButton">15 days</button>
+                <button className="fancyButton expirationButton">30 days</button>
+            </div>
+        </div>
+
         <div className="footer">
           <button
             onClick={() => {
