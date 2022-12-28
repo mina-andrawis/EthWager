@@ -6,7 +6,7 @@ import "../styles/displayTable.css"
 const DisplayTable = () => {
 
   const [collections, setCollections] = useState([]);
-  const [openBidModel, setOpenBidModal] = useState(-1);
+  const [openBidModel, setOpenBidModal] = useState(false);
   const [selectedProj, setSelectedProj] = useState('');
 
   useEffect(() => {
@@ -25,8 +25,8 @@ const DisplayTable = () => {
     return ( formatted == 0.00 ? "—" : `${formatted} ETH`)
   }
 
-  const handleOpenModal = (collection,index) => {
-    setOpenBidModal(index);
+  const handleOpenModal = (collection,openStatus) => {
+    setOpenBidModal(openStatus);
     setSelectedProj(collection.stats);
   };
 
@@ -35,7 +35,7 @@ const DisplayTable = () => {
     <div>
       {/*The setOpenBidModal function is passed as a prop to the BidModal component.
        This function can be used within the BidModal component to change the value of openBidModel*/}
-      {openBidModel != -1 && <BidModal 
+      {openBidModel != false && <BidModal 
         setModal={setOpenBidModal}
         modal={openBidModel}
         proj={selectedProj} />}
@@ -60,9 +60,8 @@ const DisplayTable = () => {
                 <td>{format(collection.stats.thirty_day_volume)}</td>
                 <td>{format(collection.stats.thirty_day_difference)}</td>
                 <td>
-                  {console.log(index)}
                   <button className="selection"
-                  onClick={() => handleOpenModal(collection,index)}> bid </button>
+                  onClick={() => handleOpenModal(collection,true)}> bid </button>
                 </td>
 
               </tr>

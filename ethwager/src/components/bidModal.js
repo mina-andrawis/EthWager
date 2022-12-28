@@ -13,7 +13,7 @@ const BidModal = (props) => {
         <div className="titleCloseBtn">
           <button
             onClick={() => {
-                setModal(-1);
+                setModal(false);
             }}>
             X
           </button>
@@ -30,7 +30,7 @@ const BidModal = (props) => {
         <div className="footer">
           <button
             onClick={() => {
-                setModal(-1);
+                setModal(false);
             }}
             id="cancelBtn"
           >
