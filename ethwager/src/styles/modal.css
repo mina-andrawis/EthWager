@@ -6,6 +6,7 @@ h1 {
     margin-bottom:20px;
 }
 
+
 .modalBackground {
     width: 100vw;
     height: 130vh;
@@ -38,6 +39,7 @@ h1 {
   .titleCloseBtn {
     display: flex;
     justify-content: flex-end;
+    margin-right: 10px;
   }
   
   .titleCloseBtn button {
@@ -45,9 +47,10 @@ h1 {
     border: none;
     font-size: 25px;
     cursor: pointer;
+
   }
   
-  .modalContainer .optionsRow {
+  .modalContainer .body {
     flex: 30%;
     color:black;
     display: flex;
@@ -89,11 +92,13 @@ h1 {
   }
   
   .fancyButton {
+    font-family: monospace;
     display: inline-block;
     padding: 10px 15px;
     border-radius: 5px;
     margin: 0px 10px;
     color: #ffffff;
+    font-size: 1.3rem;
     font-weight: bold;
     text-decoration: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -116,6 +121,10 @@ h1 {
 
   .expirationButton {
       background-color: grey;
+  }
+
+  .expirationButton:hover {
+      background-color: rgb(93, 93, 93);
   }
   .bearishButton {
     background-color: #CC2B2B;

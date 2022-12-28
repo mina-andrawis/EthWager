@@ -8,6 +8,8 @@ const DisplayTable = () => {
   const [collections, setCollections] = useState([]);
   const [openBidModel, setOpenBidModal] = useState(false);
   const [selectedProj, setSelectedProj] = useState('');
+  const [selectedProjName, setSelectedProjName] = useState('');
+
 
   useEffect(() => {
     Promise.all(projectSlugs.map(slug =>
@@ -25,9 +27,10 @@ const DisplayTable = () => {
     return ( formatted == 0.00 ? "—" : `${formatted} ETH`)
   }
 
-  const handleOpenModal = (collection,openStatus) => {
+  const handleOpenModal = (collecName,collection,openStatus) => {
     setOpenBidModal(openStatus);
     setSelectedProj(collection.stats);
+    setSelectedProjName(collecName)
   };
 
   return (
@@ -37,7 +40,7 @@ const DisplayTable = () => {
        This function can be used within the BidModal component to change the value of openBidModel*/}
       {openBidModel != false && <BidModal 
         setModal={setOpenBidModal}
-        modal={openBidModel}
+        projName={selectedProjName}
         proj={selectedProj} />}
       <div className="styled-table">
         <table>
@@ -61,7 +64,7 @@ const DisplayTable = () => {
                 <td>{format(collection.stats.thirty_day_difference)}</td>
                 <td>
                   <button className="selection"
-                  onClick={() => handleOpenModal(collection,true)}> bid </button>
+                  onClick={() => handleOpenModal(projectNames[index],collection,true)}> bid </button>
                 </td>
 
               </tr>
