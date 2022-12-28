@@ -10,7 +10,6 @@ const DisplayTable = () => {
   const [selectedProj, setSelectedProj] = useState('');
   const [selectedProjName, setSelectedProjName] = useState('');
 
-
   useEffect(() => {
     Promise.all(projectSlugs.map(slug =>
       fetch(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
@@ -34,7 +33,6 @@ const DisplayTable = () => {
   };
 
   return (
-
     <div>
       {/*The setOpenBidModal function is passed as a prop to the BidModal component.
        This function can be used within the BidModal component to change the value of openBidModel*/}
@@ -66,17 +64,13 @@ const DisplayTable = () => {
                   <button className="selection"
                   onClick={() => handleOpenModal(projectNames[index],collection,true)}> bid </button>
                 </td>
-
               </tr>
             ))}
           </tbody>
         </table>
       </div>
     </div>
-
-    
   )
-
 }
 
 export default DisplayTable;
