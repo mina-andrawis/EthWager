@@ -1,25 +1,14 @@
 import React, { useEffect, useState } from "react";
+import BidModal from "./bidModal.js"
+import {projects, projectNames, projectSlugs} from "../common.js"
 import "../styles/displayTable.css"
-
-var projects = {
-'cryptopunks':'Crypto Punks',
-'boredapeyachtclub':'Bored Ape Yacht Club',
-'mutant-ape-yacht-club':'Mutant Ape Yacht Club',
-'otherdeed':'Otherdeed for Otherside',
-'azuki':'Azuki',
-'clonex':'CLONE X - X TAKASHI MURAKAMI',
-'proof-moonbirds':'Moonbirds',
-'sandbox':'The Sandbox',
-'doodles-official':'Doodles',
-'meebits':'MeeBits',
-}
-const projectSlugs = Object.keys(projects);
-const projectNames = Object.values(projects);
 
 const DisplayTable = () => {
 
-  const [nfts, setNfts] = useState([]);
-
+  const [collections, setCollections] = useState([]);
+  const [openBidModel, setOpenBidModal] = useState(false);
+  const [selectedProj, setSelectedProj] = useState('');
+  const [selectedProjName, setSelectedProjName] = useState('');
 
   useEffect(() => {
     Promise.all(projectSlugs.map(slug =>
@@ -27,51 +16,61 @@ const DisplayTable = () => {
       .then(response => response.json())
       )).then(responses => {
         console.log(responses)
-        setNfts(responses);
+        setCollections(responses);
     });
   }, []);
 
-  function format( num ){
-
-    var formatted = (Math.floor(num * 1000)/1000)  // slice decimal digits after the 2nd one
-    .toFixed(2)  // format with two decimal places
-    .substr(0,4) // get the leading four characters
-    .replace(/\.$/,''); // remove trailing decimal place separator
+  const format = (num) => {
+    var formatted = (Math.floor(num * 1000)/1000).toFixed(2).substr(0,4).replace(/\.$/,'');
 
     return ( formatted == 0.00 ? "—" : `${formatted} ETH`)
   }
 
-  var id = 0;
-  return (
-    <div className="styled-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Collection</th>
-            <th>Floor Price</th>
-            <th>Market Cap</th>
-            <th>Volume (30d)</th>
-            {<th>Volume Delta (30d)</th>}
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {nfts.map(nft => (
-            <tr key={id}>
-              <td>{projectNames[id++]}</td>
-              <td>{format(nft.stats.floor_price)}</td>
-              <td>{format(nft.stats.market_cap)}</td>
-              <td>{format(nft.stats.thirty_day_volume)}</td>
-              <td>{format(nft.stats.thirty_day_difference)}</td>
+  const handleOpenModal = (collecName,collection,openStatus) => {
+    setOpenBidModal(openStatus);
+    setSelectedProj(collection.stats);
+    setSelectedProjName(collecName)
+  };
 
-              <td><button className="selection">bid</button></td>
+  return (
+    <div>
+      {/*The setOpenBidModal function is passed as a prop to the BidModal component.
+       This function can be used within the BidModal component to change the value of openBidModel*/}
+      {openBidModel != false && <BidModal 
+        setModal={setOpenBidModal}
+        projName={selectedProjName}
+        proj={selectedProj} />}
+      <div className="styled-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Collection</th>
+              <th>Floor Price</th>
+              <th>Market Cap</th>
+              <th>Volume (30d)</th>
+              <th>Volume Delta (30d)</th>
+              <th></th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {collections.map((collection,index) => (
+              <tr key={index}>
+                <td>{projectNames[index]}</td>
+                <td>{format(collection.stats.floor_price)}</td>
+                <td>{format(collection.stats.market_cap)}</td>
+                <td>{format(collection.stats.thirty_day_volume)}</td>
+                <td>{format(collection.stats.thirty_day_difference)}</td>
+                <td>
+                  <button className="selection"
+                  onClick={() => handleOpenModal(projectNames[index],collection,true)}> bid </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
-
 }
 
 export default DisplayTable;
