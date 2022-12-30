@@ -1,8 +1,10 @@
 const express = require("express");
 const userModel = require("./models");
+
 const app = express();
 
-app.post("/register", async (request, response) => {
+app.post("/register".replace(/localhost:(\d+)/, 'localhost:3000'), async (request, response) => {
+  
   const user = new userModel(request.body);
 
   console.log("inside POST");
