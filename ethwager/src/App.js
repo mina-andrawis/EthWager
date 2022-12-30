@@ -5,9 +5,12 @@ import Navbar from "./components/navbar"
 import Home from "./pages/home"
 import About from "./pages/about"
 import MyAccount from "./pages/my-account"
-
-
+import DbConnect from "./db/dbConnect"
 function App() {
+
+  // execute database connection 
+  //DbConnect();
+
   return (
     <div className="App">
 
