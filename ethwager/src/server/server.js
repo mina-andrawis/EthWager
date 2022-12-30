@@ -13,7 +13,7 @@ app.use(express.json());
 mongoose.set('strictQuery', false);
 
 mongoose.connect(
-  `mongodb+srv://mandrawis:Y4IZJxCu7Nwjj077@cluster0.vxac5xx.mongodb.net/?retryWrites=true&w=majority`, 
+  "mongodb+srv://mandrawis:Y4IZJxCu7Nwjj077@cluster0.vxac5xx.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true

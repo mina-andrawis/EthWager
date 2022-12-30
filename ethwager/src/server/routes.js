@@ -2,7 +2,7 @@ const express = require("express");
 const userModel = require("./models");
 const app = express();
 
-app.post("/add_user", async (request, response) => {
+app.post("/register", async (request, response) => {
   const user = new userModel(request.body);
 
   try {
