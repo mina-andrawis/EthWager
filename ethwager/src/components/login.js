@@ -14,7 +14,6 @@ function Login() {
     setIsLoggingIn(true);
     try {
       const { data } = await axios.get("http://localhost:3001/users", { email, password });
-      // do something with the returned user data
       console.log(data);
 
       const user = data.find(
@@ -24,7 +23,9 @@ function Login() {
       if (user) {
         // do something with the user data
         console.log("user is found");
+        setError(false);
         setIsLoggingIn(false);
+
       } else {
         setError(new Error("Incorrect email or password"));
         setIsLoggingIn(false);
@@ -38,22 +39,20 @@ function Login() {
   return (
     <form onSubmit={handleSubmit} className="login-container">
       {error && <div className="error">{error.message}</div>}
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </label>
+      <label htmlFor="email">Email:</label>
+      <input
+        type="email"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+      />
+      <br />
+      <label htmlFor="password">Password:</label>
+      <input
+        type="password"
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
+      />
+      <br />
       <button type="submit" disabled={isLoggingIn}>
         {isLoggingIn ? 'Logging in...' : 'Log In'}
       </button>
