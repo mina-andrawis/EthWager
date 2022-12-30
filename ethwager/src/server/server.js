@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Router = require("./routes")
+const cors = require("cors");
 
 const username = "<mongodb username>";
 const password = "<password>";
@@ -8,6 +9,7 @@ const cluster = "<cluster name>";
 const dbname = "myFirstDatabase";
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 mongoose.set('strictQuery', false);

@@ -3,7 +3,7 @@ const userModel = require("./models");
 
 const app = express();
 
-app.post("/register".replace(/localhost:(\d+)/, 'localhost:3000'), async (request, response) => {
+app.post("/register".replace('localhost:3000', 'localhost:3001'), async (request, response) => {
   
   const user = new userModel(request.body);
 

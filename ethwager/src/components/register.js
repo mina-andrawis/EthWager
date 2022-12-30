@@ -15,7 +15,7 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('/register', formData)
+    axios.post("http://localhost:3001/register", formData)
       .then((response) => {
         console.log(response.data);
       })
