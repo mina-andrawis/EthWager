@@ -29,7 +29,6 @@ function Login({setToken}) {
         
         // set token to store pass as a prop to store login data in local memory
         const token = data;
-        
         setToken(token);
 
         console.log("user is found");
