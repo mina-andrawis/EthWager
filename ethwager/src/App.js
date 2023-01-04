@@ -10,9 +10,18 @@ import Register from "./components/register"
 
 function App() {
 
+  function setToken(userToken) {
+    sessionStorage.setItem('token', JSON.stringify(userToken));
+  }
+  
+  function getToken() {
+  }
+  
+
 
   return (
     <div className="App">
+
 
       <BrowserRouter>
         <Navbar />

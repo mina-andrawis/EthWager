@@ -1,5 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Login from "../components/login"
 const MyAccount = () =>{
+
+  const [token, setToken] = useState();
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
+
   return (
     <div>
       <div>
