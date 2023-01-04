@@ -2,12 +2,17 @@ import "../styles/loginRegister.css";
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
-function Login() {
+function Login({setToken}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [error, setError] = useState(null);
+
+  Login.propTypes = {
+    setToken: PropTypes.func.isRequired
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,7 +26,12 @@ function Login() {
       );
 
       if (user) {
-        // do something with the user data
+        
+        // set token to store pass as a prop to store login data in local memory
+        const token = data;
+        
+        setToken(token);
+
         console.log("user is found");
         setError(false);
         setIsLoggingIn(false);
