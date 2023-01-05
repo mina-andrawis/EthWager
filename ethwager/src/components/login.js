@@ -3,13 +3,14 @@ import "../styles/loginRegister.css";
 import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import useToken from '../hooks/useToken'
 
 function Login({setToken}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [error, setError] = useState(null);
-
+  
   Login.propTypes = {
     setToken: PropTypes.func.isRequired
   }
@@ -26,7 +27,6 @@ function Login({setToken}) {
       );
 
       if (user) {
-        
         // set token to store pass as a prop to store login data in local memory
         const token = data;
         setToken(token);
@@ -45,6 +45,7 @@ function Login({setToken}) {
     }
   };
 
+  
   return (
     <form onSubmit={handleSubmit} className="login-container">
       {error && <div className="error">{error.message}</div>}
