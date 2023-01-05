@@ -5,7 +5,7 @@ export default function useToken() {
     const tokenString = localStorage.getItem('token');
     try {
       const userToken = JSON.parse(tokenString);
-      return userToken?.token;
+      return userToken;
     } catch (error) {
       // Handle the error here
       console.error(error);
