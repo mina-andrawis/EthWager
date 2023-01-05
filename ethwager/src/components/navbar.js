@@ -14,7 +14,7 @@ const Navbar= () =>{
       <Link to="/my-account" >My Account</Link>
     </li>
     <li>
-      <a href="https://github.com/mina-andrawis" className="nav-borderb" target="_blank">Developed by Mina</a>
+      <a href="https://github.com/mina-andrawis" className="nav-borderb" target="_blank" rel="noreferrer">Developed by Mina</a>
     </li>
   </ul>
   );

@@ -3,7 +3,9 @@ import "../styles/loginRegister.css";
 import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import useToken from '../hooks/useToken'
+import { Link } from "react-router-dom";
+import "../styles/modal.css";
+
 
 function Login({setToken}) {
   const [email, setEmail] = useState('');
@@ -66,6 +68,8 @@ function Login({setToken}) {
       <button type="submit" disabled={isLoggingIn}>
         {isLoggingIn ? 'Logging in...' : 'Log In'}
       </button>
+
+      <p>If you do not have an account, register <Link to="/register">here</Link></p>
     </form>
   );
 }

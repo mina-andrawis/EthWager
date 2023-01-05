@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import {projectNames, projectSlugs} from "../common.js"
+import React, { useState } from "react";
 import "../styles/modal.css";
 
 const BidModal = (props) => {
@@ -11,15 +10,15 @@ const BidModal = (props) => {
 
   //if those state variables are set, change the color of the buttons
 
-  if (bid != '')
+  if (bid !== '')
   {
-    if (bid == 'bullish')
+    if (bid === 'bullish')
     {
       document.getElementsByClassName("bullishButton").style='#911';
     }
   }
 
-  if (expiration != -1)
+  if (expiration !== -1)
   {
     console.log(expiration);
   }
