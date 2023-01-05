@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import "../styles/loginRegister.css";
+import { Link } from "react-router-dom";
 import axios from 'axios';
+import "../styles/loginRegister.css";
+import "../styles/modal.css";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -26,6 +28,9 @@ function Register() {
 
   return (
     <form onSubmit={handleSubmit} className="login-container">
+      <button className="titleBackBtn">
+        <Link to="/login">←</Link>
+      </button>
       <label htmlFor="email">Email:</label>
       <input
         type="email"
@@ -42,7 +47,7 @@ function Register() {
         value={formData.password}
         onChange={handleChange}/>
       <br />
-      <button type="submit">Register</button>
+      <button className="fancyButton defaultBtn" type="submit">Register</button>
     </form>
   );
 }

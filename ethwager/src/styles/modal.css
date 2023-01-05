@@ -40,6 +40,12 @@ h1 {
     justify-content: flex-end;
     margin-right: 10px;
   }
+
+  .titleBackBtn {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
   
   .titleCloseBtn button {
     background-color: transparent;
@@ -82,7 +88,9 @@ h1 {
     background-color: crimson;
   }
 
- 
+  .defaultBtn {
+    background-color: #009879;
+  }
   
   .fancyButton {
     font-family: monospace;

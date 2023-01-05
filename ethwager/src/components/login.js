@@ -1,10 +1,9 @@
-import "../styles/loginRegister.css";
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import "../styles/modal.css";
+import "../styles/loginRegister.css";
 
 
 function Login({setToken}) {
@@ -65,10 +64,11 @@ function Login({setToken}) {
         onChange={(event) => setPassword(event.target.value)}
       />
       <br />
-      <button type="submit" disabled={isLoggingIn}>
-        {isLoggingIn ? 'Logging in...' : 'Log In'}
-      </button>
-
+      <>
+        <button className="fancyButton defaultBtn" type="submit" disabled={isLoggingIn}>
+          {isLoggingIn ? 'Logging in...' : 'Log In'}
+        </button>
+      </>
       <p>If you do not have an account, register <Link to="/register">here</Link></p>
     </form>
   );

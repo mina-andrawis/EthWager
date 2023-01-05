@@ -23,7 +23,7 @@ const DisplayTable = () => {
   const format = (num) => {
     var formatted = (Math.floor(num * 1000)/1000).toFixed(2).substr(0,4).replace(/\.$/,'');
 
-    return ( formatted === 0.00 ? "—" : `${formatted} ETH`)
+    return ( formatted === "0.00" ? "—" : `${formatted} ETH`)
   }
 
   const handleOpenModal = (collecName,collection,openStatus) => {
