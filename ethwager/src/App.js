@@ -11,11 +11,11 @@ import Register from "./components/register"
 
 
 const App = () => {
+  
   const { setToken } = useToken();
 
   return (
     <div className="App">
-
 
       <BrowserRouter>
         <Navbar />

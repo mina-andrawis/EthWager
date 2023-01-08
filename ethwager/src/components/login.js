@@ -29,16 +29,16 @@ const Login = ({setToken}) => {
       );
 
       if (user) {
-        console.log(" is found");
+        console.log("user is found");
 
         // set token to store pass as a prop to store login data in local memory
-        var token = data;
+        var token = user;
+        console.log(token);
         setToken(token);
 
-        console.log("user is found");
         setError(false);
         setIsLoggingIn(false);
-
+        
       } else {
         setError(new Error("Incorrect email or password"));
         setIsLoggingIn(false);
