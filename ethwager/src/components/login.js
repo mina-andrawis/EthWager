@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+//import useToken from '../hooks/useToken'
 import "../styles/modal.css";
 import "../styles/loginRegister.css";
 
 
-function Login({setToken}) {
+const Login = ({setToken}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
@@ -28,8 +29,10 @@ function Login({setToken}) {
       );
 
       if (user) {
+        console.log(" is found");
+
         // set token to store pass as a prop to store login data in local memory
-        const token = data;
+        var token = data;
         setToken(token);
 
         console.log("user is found");
