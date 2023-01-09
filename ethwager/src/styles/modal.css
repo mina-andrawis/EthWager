@@ -14,7 +14,6 @@ h1 {
     justify-content: center;
     align-items: center;
     background-color: #ced4da80;
-    margin-top:-30vh;
   }
   
   .modalContainer {
@@ -44,17 +43,17 @@ h1 {
   a {
     text-decoration: none;
     color:#623939;
-
   }
   
   .titleBackBtn {
     display: flex;
     align-self: flex-start;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 20px;
     text-decoration: none;
     justify-content: flex-start;
     margin-left: 10px;
+    margin-top: -20px;
   }
   
   .titleCloseBtn button {
@@ -152,3 +151,29 @@ h1 {
     background-color: #9D1E1E;
   }
 
+
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  
+  .titleBackBtn {
+    display: flex;
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  /* For desktop: */
+
+
+}

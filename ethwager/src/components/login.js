@@ -48,7 +48,6 @@ const Login = ({setToken}) => {
       setIsLoggingIn(false);
     }
   };
-
   
   return (
     <form onSubmit={handleSubmit} className="login-container">

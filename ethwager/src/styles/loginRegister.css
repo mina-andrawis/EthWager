@@ -10,13 +10,14 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 80%;
   margin: 0 auto;
   padding: 2rem;
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: grey;
+  padding-top: 1rem;
 }
 
 .btn {
@@ -41,3 +42,34 @@ p {
 .error {
 color:rgb(142, 61, 61);
 }
+
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: grey;
+  }
+
+}
+
+@media only screen and (min-width: 769px) {
+  /* For desktop: */
+
+
+}
+
