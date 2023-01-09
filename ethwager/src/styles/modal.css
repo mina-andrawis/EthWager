@@ -41,8 +41,18 @@ h1 {
     margin-right: 10px;
   }
 
+  a {
+    text-decoration: none;
+    color:#623939;
+
+  }
+  
   .titleBackBtn {
     display: flex;
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 40px;
+    text-decoration: none;
     justify-content: flex-start;
     margin-left: 10px;
   }
@@ -52,7 +62,6 @@ h1 {
     border: none;
     font-size: 25px;
     cursor: pointer;
-
   }
   
   .modalContainer .body {
