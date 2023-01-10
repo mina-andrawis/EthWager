@@ -8,19 +8,19 @@ The main mechanism of this project is for a user to first pick a project, their 
 
 
 Requirements V1
-* Project consists of a single page application with different subgrids
-* Tabs include: Home, My Account, Developed by Mina (link github)
-* Create a homepage with a scrollable grid that allows users to browse the top 10 most popular etherium nft projects on OpenSea
-* Grid will show project name, current floor price,total volume,  age of project, and whether it has gone up or down in the last 30 days
-* Allow users to click each gridbox and open a new page that allows them to choose the following:
-* Bullish or bearish ?
-* When shall this wager expire? 15 days? 30 days?
+* Project consists of a single page application with different subgrids ✔️
+* Tabs include: Home, My Account, Developed by Mina (link github) ✔️
+* Create a homepage with a scrollable grid that allows users to browse the top 10 most popular etherium nft projects on OpenSea ✔️
+* Grid will show project name, current floor price,total volume,  age of project, and whether it has gone up or down in the last 30 days ✔️
+* Allow users to click each gridbox and open a new page that allows them to choose the following: ✔️
+* Bullish or bearish ? ✔️
+* When shall this wager expire? 15 days? 30 days? ✔️
 * Explanation of system
 * Allow user to connect metamask wallet, for reward deposit
 * Account page will have all active wagers and expired wagers with relevant information
 * Active Wagers:
 * Days in the money vs out of the money
 * Days left in wager
-* Account creation will require email address and password, will be associated with a metamask wallet
-* Stored in sql database
-* Email will be Ssent out when a wager expires
+* Account creation will require email address and password ✔️
+* Stored in sql database ✔️
+* Email will be sent out when a wager expires
