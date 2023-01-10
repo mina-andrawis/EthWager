@@ -24,3 +24,14 @@ Requirements V1
 * Account creation will require email address and password ✔️
 * Stored in sql database ✔️
 * Email will be sent out when a wager expires
+
+
+![image](https://user-images.githubusercontent.com/47870455/211662878-e570769b-ef62-4c95-90b1-d9a8f879ef59.png)
+
+![image](https://user-images.githubusercontent.com/47870455/211662963-502f218d-6385-45e2-b686-5e56395955f9.png)
+
+![image](https://user-images.githubusercontent.com/47870455/211666351-9e725fde-d59e-4496-b832-6d5750714c4f.png)
+
+![image](https://user-images.githubusercontent.com/47870455/211666586-ed984003-1e2e-4736-99c4-6315b32cd517.png)
+
+![image](https://user-images.githubusercontent.com/47870455/211666665-8671d343-fb5f-49c6-b9e2-614206e6d951.png)
