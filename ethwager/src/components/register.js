@@ -13,53 +13,45 @@ function Register() {
   const [message, setMessage] = useState('');
   const [error, setError] = useState(null);
 
-  // const checkUser = async (email) => {
-  //   try {
-  //     const { data } = await axios.get("http://localhost:3001/users", { email });
-  //     const user = data.find(
-  //       (user) => user.email === formData.email
-  //     );
-
-  //     if (user) {
-  //       setMessage("This email is already registered");
-  //       return true;
-  //       } 
-  //   }
-  //   catch (error) {
-  //     setError(error);
-  //     return false;
-  //   }
-  // };
+  const checkUser = async (email) => {
+    try {
+      const { data } = await axios.get("http://localhost:3001/users", { email });
+      const user = data.find(
+        (user) => user.email === formData.email
+      );
   
+      return Boolean(user); // return true if user is found, false otherwise
+    } catch (error) {
+      setError(error);
+      return false;
+    }
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // if (checkUser(formData.email)) {
-    //   return;
-    // } else {
-    axios.post("http://localhost:3001/register", formData)
-      .then((response) => {
-        console.log(response.data);
-        
-        setMessage('Successfully registered');
-        setError(false);
-      })
-      .catch((error) => {
-        console.error(error);
+    try {
+      const userExist = await checkUser(formData.email);
+      
+      if (userExist) {
+        setMessage('A user with that email already exists');
+        return;
+      } 
+      await axios.post("http://localhost:3001/register", formData);
+      setMessage('Successfully registered');
+      setError(false);
+    } catch (error) {
         setError(error);
-      });
-  //}
-  
-  if (formData.email === "" || formData.password === "") {
-    setMessage("Please fill in all fields");
-    setError(false);
-  }
+    }
+
+    if (formData.email === "" || formData.password === "") {
+      setMessage("Please fill in all fields");
+      setError(false);
+    }
 }
 
   useEffect(() => {
