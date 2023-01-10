@@ -1,0 +1,145 @@
+input, select, textarea{
+  color:black;
+}
+
+p {
+  padding: 15px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: grey;
+  padding-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.error {
+color:rgb(142, 61, 61)!important;
+}
+
+a {
+  text-decoration: none;
+  color:#623939;
+}
+
+.titleBackBtn {
+  display: flex;
+  align-self: flex-start;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  justify-content: flex-start;
+  margin-left: 10px;
+  margin-top: -20px;
+}
+
+.defaultBtn {
+  background-color: #009879;
+}
+
+.fancyButton {
+  font-family: monospace;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.fancyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: auto;
+  margin-top: 50px;
+  transition: opacity 3s;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #42a5f5;
+  border-radius: 5px;
+  color: #42a5f5;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: grey;
+  }
+
+  .titleBackBtn {
+    display: flex;
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
+
+}
+
+@media only screen and (min-width: 769px) {
+  /* For desktop: */
+
+
+}
+
+

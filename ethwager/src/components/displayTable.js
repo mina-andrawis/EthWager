@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import BidModal from "./bidModal.js"
-import {projects, projectNames, projectSlugs} from "../common.js"
+import {projectNames, projectSlugs} from "../common.js"
 import "../styles/displayTable.css"
 
 const DisplayTable = () => {
@@ -15,7 +15,7 @@ const DisplayTable = () => {
       fetch(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
       .then(response => response.json())
       )).then(responses => {
-        console.log(responses)
+        //console.log(responses)
         setCollections(responses);
     });
   }, []);
@@ -23,7 +23,7 @@ const DisplayTable = () => {
   const format = (num) => {
     var formatted = (Math.floor(num * 1000)/1000).toFixed(2).substr(0,4).replace(/\.$/,'');
 
-    return ( formatted == 0.00 ? "—" : `${formatted} ETH`)
+    return ( formatted === "0.00" ? "—" : `${formatted} ETH`)
   }
 
   const handleOpenModal = (collecName,collection,openStatus) => {
@@ -36,7 +36,7 @@ const DisplayTable = () => {
     <div>
       {/*The setOpenBidModal function is passed as a prop to the BidModal component.
        This function can be used within the BidModal component to change the value of openBidModel*/}
-      {openBidModel != false && <BidModal 
+      {openBidModel !== false && <BidModal 
         setModal={setOpenBidModal}
         projName={selectedProjName}
         proj={selectedProj} />}

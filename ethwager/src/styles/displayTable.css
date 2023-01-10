@@ -1,7 +1,7 @@
 .styled-table {
     border-collapse: collapse;
     margin: 30px auto;
-    font-size: 0.8em;
+    font-size: 0.75em;
     overflow:auto;
     max-width: fit-content;
     font-family: Optima;
@@ -60,8 +60,10 @@ button.selection:hover{
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
     
-    .styled-table {
-        font-size: 0.9em;
+    .styled-table th,
+    .styled-table td {
+        font-size: .9rem;
+        margin: auto;
     }
   }
   
@@ -80,9 +82,39 @@ button.selection:hover{
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
 
+    .styled-table th,
+    .styled-table td {
+        font-size: 1rem;
+        margin: auto;
+        padding:10px;
+        padding-left: 10px;
+    }
+  }
+
+  @media only screen and (min-width: 1439px) {
+    /* For ultra wide desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
     .styled-table {
-        font-size: 0.9em;
-        margin-left:auto;
-        margin-right:auto;
+        margin: 30px auto;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        margin: auto;
+        font-size: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
   }

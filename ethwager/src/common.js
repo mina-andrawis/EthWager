@@ -10,6 +10,6 @@ var projects = {
     'doodles-official':'Doodles',
     'meebits':'MeeBits',
     }
-
+    
 export const projectSlugs = Object.keys(projects);
 export const projectNames = Object.values(projects);
