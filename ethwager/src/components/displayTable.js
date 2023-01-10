@@ -15,7 +15,7 @@ const DisplayTable = () => {
       fetch(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
       .then(response => response.json())
       )).then(responses => {
-        console.log(responses)
+        //console.log(responses)
         setCollections(responses);
     });
   }, []);

@@ -12,6 +12,7 @@ const Login = ({setToken}) => {
   const [password, setPassword] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [error, setError] = useState(null);
+
   
   Login.propTypes = {
     setToken: PropTypes.func.isRequired
@@ -29,16 +30,13 @@ const Login = ({setToken}) => {
       );
 
       if (user) {
-        console.log("user is found");
-
         // set token to store pass as a prop to store login data in local memory
-        var token = user;
         console.log(token);
+        var token = user;
         setToken(token);
-
         setError(false);
         setIsLoggingIn(false);
-        
+        window.location.reload();
       } else {
         setError(new Error("Incorrect email or password"));
         setIsLoggingIn(false);
@@ -50,29 +48,33 @@ const Login = ({setToken}) => {
   };
   
   return (
-    <form onSubmit={handleSubmit} className="login-container">
-      {error && <div className="error">{error.message}</div>}
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-      />
-      <br />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        value={password}
-        onChange={(event) => setPassword(event.target.value)}
-      />
-      <br />
-      <>
-        <button className="fancyButton defaultBtn" type="submit" disabled={isLoggingIn}>
-          {isLoggingIn ? 'Logging in...' : 'Log In'}
-        </button>
-      </>
-      <p>If you do not have an account, register <Link to="/register">here</Link></p>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="login-container">
+        
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <br />
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+        <br />
+        <>
+          <button className="fancyButton defaultBtn" type="submit" disabled={isLoggingIn}>
+            {isLoggingIn ? 'Logging in...' : 'Log In'}
+          </button>
+        </>
+        <p>If you do not have an account, register <Link to="/register">here</Link></p>
+      </form>
+      {error && <div className="error message">{error.message}</div>}
+      
+    </>
   );
 }
 
