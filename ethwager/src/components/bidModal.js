@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/modal.css";
+import "../styles/bidModal.css";
 
 const BidModal = (props) => {
 

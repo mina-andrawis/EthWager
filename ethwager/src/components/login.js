@@ -3,7 +3,6 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 //import useToken from '../hooks/useToken'
-import "../styles/modal.css";
 import "../styles/loginRegister.css";
 
 

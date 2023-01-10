@@ -43,6 +43,63 @@ p {
 color:rgb(142, 61, 61)!important;
 }
 
+a {
+  text-decoration: none;
+  color:#623939;
+}
+
+.titleBackBtn {
+  display: flex;
+  align-self: flex-start;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  justify-content: flex-start;
+  margin-left: 10px;
+  margin-top: -20px;
+}
+
+.defaultBtn {
+  background-color: #009879;
+}
+
+.fancyButton {
+  font-family: monospace;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.fancyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: auto;
+  margin-top: 50px;
+  transition: opacity 3s;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #42a5f5;
+  border-radius: 5px;
+  color: #42a5f5;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
 
 /* For mobile phones: */
 [class*="col-"] {
@@ -59,6 +116,7 @@ color:rgb(142, 61, 61)!important;
     width: 60%;
     margin: 0 auto;
     margin-top: 50px;
+
     padding: 2rem;
     background-color: white;
     border-radius: 1rem;
@@ -66,26 +124,22 @@ color:rgb(142, 61, 61)!important;
     background-color: grey;
   }
 
+  .titleBackBtn {
+    display: flex;
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
+
 }
 
 @media only screen and (min-width: 769px) {
   /* For desktop: */
 
-.message {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  margin: auto;
-  transition: opacity 3s;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid #42a5f5;
-  border-radius: 5px;
-  color: #42a5f5;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: center;
+
 }
-}
+
 
