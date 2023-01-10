@@ -1,12 +1,10 @@
+const path = require('path');
+require("dotenv").config({ path: path.resolve(__dirname, '../../', '.env') });
 const express = require("express");
 const mongoose = require("mongoose");
 const Router = require("./routes")
 const cors = require("cors");
 
-const username = "<mongodb username>";
-const password = "<password>";
-const cluster = "<cluster name>";
-const dbname = "myFirstDatabase";
 
 const app = express();
 app.use(cors());
@@ -15,7 +13,7 @@ app.use(express.json());
 mongoose.set('strictQuery', false);
 
 mongoose.connect(
-  "mongodb+srv://mandrawis:Y4IZJxCu7Nwjj077@cluster0.vxac5xx.mongodb.net/?retryWrites=true&w=majority",
+  process.env.REACT_APP_DB_URL,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true

@@ -7,8 +7,6 @@ app.post("/register", async (request, response) => {
   
   const user = new userModel(request.body);
 
-  console.log("inside POST");
-
   try {
     await user.save();
     response.send(user);
