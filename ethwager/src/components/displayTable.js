@@ -33,7 +33,7 @@ const DisplayTable = () => {
   };
 
   return (
-    <div>
+    <>
       {/*The setOpenBidModal function is passed as a prop to the BidModal component.
        This function can be used within the BidModal component to change the value of openBidModel*/}
       {openBidModel !== false && <BidModal 
@@ -69,7 +69,7 @@ const DisplayTable = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   )
 }
 
