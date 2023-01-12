@@ -19,7 +19,7 @@ p {
   }
   
   .cMmodalContainer {
-    width: 800px;
+    width: 1000px;
     height: fit-content;
     border-radius: 12px;
     background-color: #009879;
@@ -27,13 +27,6 @@ p {
     display: flex;
     flex-direction: column;
     padding: 5px;
-    font-family: Optima;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
   }
   
   .modalContainer .title {
