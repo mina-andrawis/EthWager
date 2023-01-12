@@ -20,7 +20,7 @@ const BidModal = (props) => {
 
   const handleContinue = () => {
     setOpenConfirmationModal(true);
-  }
+  } 
 
   const handleConfirmationClose = () => {
     //setOpenConfirmationModal(false);
@@ -33,7 +33,8 @@ const BidModal = (props) => {
         {/* pass callback function as handleClose to close the child component from inside ConfirmationModal*/}
         {openConfirmationModal
         && <ConfirmationModal 
-        handleClose={handleConfirmationClose} 
+        showBidModal={setModal}
+        showConfirmationModal={setOpenConfirmationModal}
         bid={bid} 
         projName={projName} 
         floorprice={proj.floor_price}/>}
