@@ -7,31 +7,38 @@ const BidModal = (props) => {
   const {setModal,projName, proj} = props;
 
   var [openConfirmationModal, setOpenConfirmationModal] = useState(false);
-  var [bid, setBid] = useState(null);
-  var [expiration, setExpiration] = useState(null);
-  const [error, setError] = useState(null);
+  var [bid, setBid] = useState('');
+  var [expiration, setExpiration] = useState(-1);
 
-  if (expiration && bid )
+  if (expiration !== -1 && bid !== '')
   {
     console.log("bid and expiration:");
     console.log(bid);
     console.log(expiration);
   }
 
+
   const handleContinue = () => {
-    // if (!bid || !expiration) {
-    //     setError("Please enter both bid and expiration");
-    // } else {
-    //     setError(null);
-        setOpenConfirmationModal(true);
-    //}
-} 
+    setOpenConfirmationModal(true);
+  } 
+
+  const handleConfirmationClose = () => {
+    //setOpenConfirmationModal(false);
+  }
 
   if (proj.floor_price)
   {
     return (
       <> 
         {/* pass callback function as handleClose to close the child component from inside ConfirmationModal*/}
+        {openConfirmationModal
+        && <ConfirmationModal 
+        showBidModal={setModal}
+        showConfirmationModal={setOpenConfirmationModal}
+        bid={bid} 
+        projName={projName} 
+        floorprice={proj.floor_price}/>}
+
         {!openConfirmationModal &&
           <div className="modalBackground">
             <div className="modalContainer">
@@ -74,10 +81,8 @@ const BidModal = (props) => {
               <button onClick={() => { setModal(false) }} id="cancelBtn">
                   Cancel
               </button>
-              <button onClick={handleContinue} disabled={!bid || !expiration}>Continue</button>
+              <button onClick={handleContinue}>Continue</button>
               </div>
-              {error && <div className="error message">{error}</div>}
-
             </div>
           </div>
         } 

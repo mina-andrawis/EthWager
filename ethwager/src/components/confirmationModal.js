@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/confirmationModal.css";
 
 const ConfirmationModal = (props) => {
-  const { showBidModal,  proj, bid, expiration, projName, floorprice} = props;
+  const { showBidModal,  proj, projName, floorprice} = props;
   const handleConfirm = () => {
     // Perform some action with the bid and expiration values here, such as sending a request to a server to create a new wager
     // console.log(`Confirmed bid: ${bid}, expiration: ${expiration} days`);
@@ -23,7 +23,7 @@ const ConfirmationModal = (props) => {
           )}
         </div>
         <div className="modal-body">
-          <p>Are you sure you want to place a {bid} bid with an expiration of {expiration} days?</p>
+          {/* <p>Are you sure you want to place a {bid} bid with an expiration of {expiration} days?</p> */}
         </div>
         <div className="modal-footer">
           <button onClick={() =>showBidModal(false)}>Cancel</button>
