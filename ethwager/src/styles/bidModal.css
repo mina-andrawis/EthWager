@@ -1,0 +1,159 @@
+p {
+  margin:0;
+}
+
+h1 {
+  margin-bottom:20px;
+}
+
+.modalBackground {
+  width: 100vw;
+  height: 130vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ced4da80;
+  margin-top:-30vh;
+}
+
+.modalContainer {
+  width: 800px;
+  height: fit-content;
+  border-radius: 12px;
+  background-color: #009879;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-family: Optima;
+}
+
+.modalContainer .title {
+  display: inline-block;
+  color:white;
+  text-align: center;
+}
+
+.titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+
+.modalContainer .body {
+  flex: 30%;
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.modalContainer .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer .footer button {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#cancelBtn {
+  background-color: crimson;
+}
+
+.fancyButton {
+  font-family: monospace;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.top {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.bottom {
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+
+.fancyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.expirationButton {
+    background-color: grey;
+}
+
+.expirationButton:hover, .expirationButton.selected {
+    background-color: rgb(93, 93, 93);
+}
+
+.bullishButton {
+  background-color: #22C722;
+}
+
+.bullishButton:hover, .bullishButton.selected {
+  background-color: #1b841b;
+}
+
+.bearishButton {
+  background-color: #CC2B2B;
+}
+
+.bearishButton:hover, .bearishButton.selected {
+  background-color: #9D1E1E;
+}
+
+.error {
+  color:rgb(142, 61, 61)!important;
+  }
+
+.message {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: auto;
+  margin-top: 10px!important;
+  margin-bottom: 30px!important;
+  transition: opacity 3s;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #42a5f5;
+  border-radius: 5px;
+  color: #42a5f5;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}

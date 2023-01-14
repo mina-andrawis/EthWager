@@ -1,13 +1,12 @@
 p {
     margin:0;
-}
-
-h1 {
+  }
+  
+  h1 {
     margin-bottom:20px;
-}
-
-
-.modalBackground {
+  }
+  
+  .modalBackground {
     width: 100vw;
     height: 130vh;
     position: fixed;
@@ -16,18 +15,18 @@ h1 {
     align-items: center;
     background-color: #ced4da80;
     margin-top:-30vh;
+    
   }
   
-  .modalContainer {
-    width: 800px;
-    height: 500px;
+  .cMmodalContainer {
+    width: 1000px;
+    height: fit-content;
     border-radius: 12px;
     background-color: #009879;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     padding: 5px;
-    font-family: Optima;
   }
   
   .modalContainer .title {
@@ -47,7 +46,7 @@ h1 {
     border: none;
     font-size: 25px;
     cursor: pointer;
-
+  
   }
   
   .modalContainer .body {
@@ -82,8 +81,6 @@ h1 {
   #cancelBtn {
     background-color: crimson;
   }
-
- 
   
   .fancyButton {
     font-family: monospace;
@@ -98,41 +95,8 @@ h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
   }
-
-  .top {
-    padding-top: 40px;
-  }
-
-  .bottom {
-    padding-bottom: 40px;
-  }
-
+  
   .fancyButton:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   }
-
-  .expirationButton {
-      background-color: grey;
-  }
-
-  .expirationButton:hover, .expirationButton.selected {
-      background-color: rgb(93, 93, 93);
-  }
-
-  .bullishButton {
-    background-color: #22C722;
-  }
-  
-  .bullishButton:hover, .bullishButton.selected {
-    background-color: #1b841b;
-  }
-
-  .bearishButton {
-    background-color: #CC2B2B;
-  }
-
-  .bearishButton:hover, .bearishButton.selected {
-    background-color: #9D1E1E;
-  }
-

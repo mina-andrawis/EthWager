@@ -8,19 +8,30 @@ The main mechanism of this project is for a user to first pick a project, their 
 
 
 Requirements V1
-* Project consists of a single page application with different subgrids
-* Tabs include: Home, My Account, Developed by Mina (link github)
-* Create a homepage with a scrollable grid that allows users to browse the top 10 most popular etherium nft projects on OpenSea
-* Grid will show project name, current floor price,total volume,  age of project, and whether it has gone up or down in the last 30 days
-* Allow users to click each gridbox and open a new page that allows them to choose the following:
-* Bullish or bearish ?
-* When shall this wager expire? 15 days? 30 days?
+* Project consists of a single page application with different subgrids ✔️
+* Tabs include: Home, My Account, Developed by Mina (link github) ✔️
+* Create a homepage with a scrollable grid that allows users to browse the top 10 most popular etherium nft projects on OpenSea ✔️
+* Grid will show project name, current floor price,total volume,  age of project, and whether volume has gone up or down in the last 30 days ✔️
+* Allow users to click each gridbox and open a new page that allows them to choose the following: ✔️
+* Bullish or bearish ? ✔️
+* When shall this wager expire? 15 days? 30 days? ✔️
 * Explanation of system
 * Allow user to connect metamask wallet, for reward deposit
 * Account page will have all active wagers and expired wagers with relevant information
 * Active Wagers:
 * Days in the money vs out of the money
 * Days left in wager
-* Account creation will require email address and password, will be associated with a metamask wallet
-* Stored in sql database
-* Email will be Ssent out when a wager expires
+* Account creation will require email address and password ✔️
+* Stored in mongoDB database ✔️
+* Email will be sent out when a wager expires
+
+
+![image](https://user-images.githubusercontent.com/47870455/211662878-e570769b-ef62-4c95-90b1-d9a8f879ef59.png)
+
+![image](https://user-images.githubusercontent.com/47870455/211662963-502f218d-6385-45e2-b686-5e56395955f9.png)
+
+![image](https://user-images.githubusercontent.com/47870455/211668654-0b19a2a3-8223-4f4f-9201-ef3d657683d0.png)
+
+![image](https://user-images.githubusercontent.com/47870455/211666586-ed984003-1e2e-4736-99c4-6315b32cd517.png)
+
+![image](https://user-images.githubusercontent.com/47870455/211666665-8671d343-fb5f-49c6-b9e2-614206e6d951.png)
