@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import style from "../styles/bidModal.css";
+import classnames from 'classnames';
+import styles from "../styles/bidModal.module.css";
+
 import ConfirmationModal from "./confirmationModal";
 
 const BidModal = (props) => {
@@ -17,7 +19,6 @@ const BidModal = (props) => {
     console.log(bid);
     console.log(expiration);
   }
-
 
   const handleContinue = () => {
     if (bid && expiration) {
@@ -47,22 +48,22 @@ const BidModal = (props) => {
         floorprice={proj.floor_price}/>}
 
         {!openConfirmationModal &&
-          <div className="modalBackground">
-            <div className="modalContainer">
-              <div className="titleCloseBtn">
+          <div className={styles.modalBackground}>
+            <div className={styles.modalContainer}>
+              <div className={styles.titleCloseBtn}>
                   <button onClick={() => { setModal(false) }}> 
                       X
                   </button>
               </div>
-              <div className="title">
+              <div className={styles.title}>
                   <h1>{projName}</h1>            
                   <h2>The floor price for this project is: {(proj.floor_price)} ETH</h2>
               </div>
-              <div className="top body">
+              <div className={classnames(styles.top, styles.body)}>
                   <div className="bidQuestion">
                       <p>Are you bullish or bearish?</p>
                   </div>
-                  <div className="bidButtons">
+                  <div className={styles.bidButtons}>
                       <button className={bid === 'bullish' ? 'selected fancyButton bullishButton' : 'fancyButton bullishButton'} onClick={() => setBid('bullish')}>
                         Bullish
                       </button>
@@ -90,7 +91,7 @@ const BidModal = (props) => {
               </button>
               <button onClick={handleContinue}>Continue</button>
               </div>
-              {error && <div className="error message"> {error} </div>}
+              {error && <div className={classnames(styles.error, styles.message)}> {error} </div>}
             </div>
           </div>
         } 
