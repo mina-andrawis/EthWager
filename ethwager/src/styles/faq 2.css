@@ -1,0 +1,76 @@
+body {
+  font-family: Optima;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+
+}
+
+h1 {
+  font-size: 32px;
+  margin: 16px 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 16px 0;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 8px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+
+}
+
+@media only screen and (min-width: 769px) {
+  /* For desktop: */
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+    margin-bottom: 80px;
+
+  }
+
+  h1 {
+    font-size: 52px;
+    margin: 16px 0;
+  }
+  
+  h2 {
+    font-size: 35px;
+    margin: 25px 0;
+  }
+  
+  h3 {
+    font-size: 30px;
+    margin-top: 40px;
+  }
+  
+  p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+  }
+}

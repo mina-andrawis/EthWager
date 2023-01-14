@@ -7,10 +7,11 @@ const BidModal = (props) => {
   const {setModal,projName, proj} = props;
 
   var [openConfirmationModal, setOpenConfirmationModal] = useState(false);
-  var [bid, setBid] = useState('');
-  var [expiration, setExpiration] = useState(-1);
+  var [bid, setBid] = useState(null);
+  var [expiration, setExpiration] = useState(null);
+  var [error, setError] = useState(false);
 
-  if (expiration !== -1 && bid !== '')
+  if (expiration && bid)
   {
     console.log("bid and expiration:");
     console.log(bid);
@@ -19,7 +20,12 @@ const BidModal = (props) => {
 
 
   const handleContinue = () => {
-    setOpenConfirmationModal(true);
+    if (bid && expiration) {
+      setOpenConfirmationModal(true);
+    }
+    else {
+      setError("Please enter both bid and expiration")
+    }
   } 
 
   const handleConfirmationClose = () => {
@@ -83,6 +89,7 @@ const BidModal = (props) => {
               </button>
               <button onClick={handleContinue}>Continue</button>
               </div>
+              {error && <div className="error message"> {error} </div>}
             </div>
           </div>
         } 

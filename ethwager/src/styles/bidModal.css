@@ -134,3 +134,27 @@ h1 {
 .bearishButton:hover, .bearishButton.selected {
   background-color: #9D1E1E;
 }
+
+.error {
+  color:rgb(142, 61, 61)!important;
+  }
+
+.message {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: auto;
+  margin-top: 20px!important;
+  margin-bottom: 30px!important;
+
+  transition: opacity 3s;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #42a5f5;
+  border-radius: 5px;
+  color: #42a5f5;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
