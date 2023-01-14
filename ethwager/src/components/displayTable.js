@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BidModal from "./bidModal.js"
 import {projectNames, projectSlugs} from "../common.js"
-import "../styles/displayTable.css"
+import styles from "../styles/displayTable.module.css";
 
 const DisplayTable = () => {
 
@@ -40,7 +40,7 @@ const DisplayTable = () => {
         setModal={setOpenBidModal}
         projName={selectedProjName}
         proj={selectedProj} />}
-      <div className="styled-table">
+      <div className={styles.styledTable}>
         <table>
           <thead>
             <tr>
@@ -61,7 +61,7 @@ const DisplayTable = () => {
                 <td>{format(collection.stats.thirty_day_volume)}</td>
                 <td>{format(collection.stats.thirty_day_difference)}</td>
                 <td>
-                  <button className="selection"
+                  <button className={styles.selection}
                   onClick={() => handleOpenModal(projectNames[index],collection,true)}> bid </button>
                 </td>
               </tr>

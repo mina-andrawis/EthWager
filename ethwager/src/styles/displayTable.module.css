@@ -1,4 +1,4 @@
-.styled-table {
+.styledTable {
     border-collapse: collapse;
     margin: 30px auto;
     font-size: 0.75em;
@@ -6,16 +6,20 @@
     max-width: fit-content;
     font-family: Optima;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
+    border-radius: 10px;}
 
-.styled-table thead tr {
+.styledTable thead tr {
     background-color: #009879;
     color: #ffffff;
     text-align: center;
 }
 
-.styled-table th,
-.styled-table td {
+.styledTable th {
+    background-color: #009879;
+    text-align: center;
+
+}
+.styledTable td {
     padding: 12px 15px;
     text-align: center;
     border:none;
@@ -59,9 +63,15 @@ button.selection:hover{
     .col-s-10 {width: 83.33%;}
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
+
+    .styledTable {
+        margin: 30px auto;
+        width:  70%;
+        min-width: ;
+    }
     
-    .styled-table th,
-    .styled-table td {
+    .styledTable th,
+    .styledTable td {
         font-size: .9rem;
         margin: auto;
     }
@@ -82,8 +92,8 @@ button.selection:hover{
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
 
-    .styled-table th,
-    .styled-table td {
+    .styledTable th,
+    .styledTable td {
         font-size: 1rem;
         margin: auto;
         padding:10px;
@@ -106,12 +116,12 @@ button.selection:hover{
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
 
-    .styled-table {
+    .styledTable {
         margin: 30px auto;
     }
 
-    .styled-table th,
-    .styled-table td {
+    .styledTable th,
+    .styledTable td {
         margin: auto;
         font-size: 1.5rem;
         padding-left: 1.5rem;
