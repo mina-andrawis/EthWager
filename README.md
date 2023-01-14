@@ -15,7 +15,7 @@ Requirements V1
 * Allow users to click each gridbox and open a new page that allows them to choose the following: ✔️
 * Bullish or bearish ? ✔️
 * When shall this wager expire? 15 days? 30 days? ✔️
-* Explanation of system
+* Explanation of system ✔️
 * Allow user to connect metamask wallet, for reward deposit
 * Account page will have all active wagers and expired wagers with relevant information
 * Active Wagers:
