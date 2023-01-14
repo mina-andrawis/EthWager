@@ -29,10 +29,6 @@ const BidModal = (props) => {
     }
   } 
 
-  const handleConfirmationClose = () => {
-    //setOpenConfirmationModal(false);
-  }
-
   if (proj.floor_price)
   {
     return (

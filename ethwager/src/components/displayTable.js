@@ -55,11 +55,11 @@ const DisplayTable = () => {
           <tbody>
             {collections.map((collection,index) => (
               <tr key={index}>
-                <td>{projectNames[index]}</td>
-                <td>{format(collection.stats.floor_price)}</td>
-                <td>{format(collection.stats.market_cap)}</td>
-                <td>{format(collection.stats.thirty_day_volume)}</td>
-                <td>{format(collection.stats.thirty_day_difference)}</td>
+                <td className={styles.tableData}>{projectNames[index]}</td>
+                <td className={styles.tableData}>{format(collection.stats.floor_price)}</td>
+                <td className={styles.tableData}>{format(collection.stats.market_cap)}</td>
+                <td className={styles.tableData}>{format(collection.stats.thirty_day_volume)}</td>
+                <td className={styles.tableData}>{format(collection.stats.thirty_day_difference)}</td>
                 <td>
                   <button className={styles.selection}
                   onClick={() => handleOpenModal(projectNames[index],collection,true)}> bid </button>

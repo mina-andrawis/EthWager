@@ -148,7 +148,6 @@ h1 {
   margin: auto;
   margin-top: 20px!important;
   margin-top: 30px!important;
-
   transition: opacity 3s;
   background-color: rgb(255, 255, 255);
   border: 1px solid #42a5f5;
@@ -157,4 +156,8 @@ h1 {
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
+}
+
+mark {
+  background-color: #58a394;
 }

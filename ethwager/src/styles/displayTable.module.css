@@ -6,23 +6,25 @@
     max-width: fit-content;
     font-family: Optima;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;}
-
-.styledTable thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: center;
+    border-radius: 10px;
 }
 
 .styledTable th {
     background-color: #009879;
     text-align: center;
+    border: none;
+
 
 }
 .styledTable td {
     padding: 12px 15px;
     text-align: center;
     border:none;
+}
+
+.tableData {
+    color: white;
+    text-align: center;
 }
 
 button.selection{

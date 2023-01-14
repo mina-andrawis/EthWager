@@ -1,5 +1,6 @@
  p {
   margin:0;
+  color:white
 }
   
  h1 {
@@ -67,6 +68,7 @@
   justify-content: center;
   align-items:center;
   font-size: 1.7rem;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -105,12 +107,26 @@ table {
   border-collapse: collapse;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+
 }
 
 th, td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  color: black;
+  border: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+img {
+  width: fit-content;
+  margin: 0!important;
+  padding: 0;
+  display:inline-block;
+  padding-bottom: 6px;
 }
 
 th {
