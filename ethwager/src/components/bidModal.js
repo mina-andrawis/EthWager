@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/bidModal.css";
+import style from "../styles/bidModal.css";
 import ConfirmationModal from "./confirmationModal";
 
 const BidModal = (props) => {

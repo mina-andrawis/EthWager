@@ -1,12 +1,12 @@
-.confirm p {
+ p {
   margin:0;
 }
   
-.confirm h1 {
+ h1 {
   margin-bottom:20px;
 }
 
-.confirm .modalBackground {
+ .modalBackground {
   width: 100vw;
   height: 130vh;
   position: fixed;
@@ -17,7 +17,7 @@
   margin-top:-30vh;
 }
 
-.confirm .modalContainer {
+ .modalContainer {
   width: 1000px;
   height: fit-content;
   border-radius: 12px;
@@ -28,19 +28,19 @@
   padding: 5px;
 }
 
-.confirm .modalContainer .title {
+ .modalContainer .title {
   display: inline-block;
   color:white;
   text-align: center;
 }
 
-.confirm .titleCloseBtn {
+ .titleCloseBtn {
   display: flex;
   justify-content: flex-end;
   margin-right: 10px;
 }
 
-.confirm .titleCloseBtn button {
+ .titleCloseBtn button {
   background-color: transparent;
   border: none;
   font-size: 25px;
@@ -48,7 +48,7 @@
 
 }
 
-.confirm .modalContainer .body {
+ .modalContainer .body {
   flex: 30%;
   color:black;
   display: flex;
@@ -58,30 +58,18 @@
   text-align: center;
 }
 
-.confirm .modalContainer .footer {
+ .modalContainer .footer {
   flex: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.confirm .modalContainer button {
-  width: 150px;
-  height: 45px;
-  margin: 10px;
-  border: none;
-  background-color: cornflowerblue;
-  color: white;
-  border-radius: 8px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.confirm .cancelButton {
+ .cancelButton {
   background-color: crimson!important;
 }
 
-.confirm .fancyButton {
+ .fancyButton {
   font-family: monospace;
   display: inline-block;
   padding: 10px 15px;
@@ -95,7 +83,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.confirm .fancyButton:hover {
+ .fancyButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/confirmationModal.css";
+import styles from "../styles/confirmationModal.module.css";
 
 const ConfirmationModal = (props) => {
   const { showBidModal,  proj, bid, expiration, projName, floorprice} = props;
@@ -8,26 +8,22 @@ const ConfirmationModal = (props) => {
     // console.log(`Confirmed bid: ${bid}, expiration: ${expiration} days`);
   };
 
-  console.log('hi');
-
   return (
-    <div classname="confirm">
-      <div className="modalBackground">
-        <div className="modalContainer">
-          <div className="title">
+      <div className={styles.modalBackground}>
+        <div className={styles.modalContainer}>
+          <div className={styles.title}>
             <h1>{projName}</h1>
             <h2>The floor price for this project is: {floorprice} ETH</h2>
           </div>
-          <div className="body">
+          <div className={styles.body}>
             <p>Are you sure you want to place a {bid} bid with an expiration of {expiration} days?</p>
           </div>
-          <div className="footer">
-            <button className="cancelButton" onClick={() =>showBidModal(false)}>Cancel</button>
+          <div className={styles.footer}>
+            <button className={styles.cancelButton, styles.fancyButton} onClick={() =>showBidModal(false)}>Cancel</button>
             <button onClick={handleConfirm}>Confirm</button>
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
