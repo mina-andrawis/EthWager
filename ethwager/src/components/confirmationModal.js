@@ -15,9 +15,24 @@ const ConfirmationModal = (props) => {
           <div className={styles.title}>
             <h1>{projName}</h1>
             <h2>The floor price for this project is: {floorprice} ETH</h2>
+            <p>Are you sure you want to place a {bid} bid with an expiration of {expiration} days?</p>
+            
           </div>
           <div className={styles.body}>
-            <p>Are you sure you want to place a {bid} bid with an expiration of {expiration} days?</p>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>Bid</td>
+                  <td>{bid}</td>
+                </tr>
+                <tr>
+                  <td>Expiration</td>
+                  <td>{expiration} days</td>
+                </tr>
+              </tbody>
+            </table>
+
           </div>
           <div className={styles.footer}>
             <button className={classnames(styles.cancelButton, styles.fancyButton)} onClick={() =>showBidModal(false)}>Cancel</button>
