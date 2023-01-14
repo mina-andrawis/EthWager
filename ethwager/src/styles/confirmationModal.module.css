@@ -1,0 +1,135 @@
+ p {
+  margin:0;
+  color:white
+}
+  
+ h1 {
+  margin-bottom:20px;
+}
+
+.modalContainer .footer button {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+ .modalBackground {
+  width: 100vw;
+  height: 130vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ced4da80;
+  margin-top:-30vh;
+}
+
+ .modalContainer {
+  width: 1000px;
+  height: fit-content;
+  border-radius: 12px;
+  background-color: #009879;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+ .modalContainer .title {
+  display: inline-block;
+  color:white;
+  text-align: center;
+}
+
+ .titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+ .titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+
+ .modalContainer .body {
+  flex: 30%;
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-size: 1.7rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+ .modalContainer .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ .cancelButton {
+  background-color: crimson!important;
+}
+
+ .fancyButton {
+  font-family: monospace;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+ .fancyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  color: black;
+  border: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+img {
+  width: fit-content;
+  margin: 0!important;
+  padding: 0;
+  display:inline-block;
+  padding-bottom: 6px;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}

@@ -25,8 +25,8 @@ const FAQ = () => {
  
         <h3>Bullish or Bearish?</h3>
           <p>
-            Users can choose to bet on whether a chosen project's floor price will increase <b>(bullish)</b> or decrease <b>(bearish)</b> from the current floor price, over a set period of time. 
-            ranging from 15 to 30 days. If the user's price-action prediction is correct more days than not until the wager's expiration date, 
+            Users can choose to bet on whether a chosen project's floor price will increase <b>(bullish)</b> or decrease <b>(bearish)</b> from the current floor price, over a set period of time, 
+            either 15 to 30 days. If the user's price-action prediction is correct more days than not until the wager's expiration date, 
             they will be rewarded with WAGER coins.
           </p>
 

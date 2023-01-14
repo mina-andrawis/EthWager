@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BidModal from "./bidModal.js"
 import {projectNames, projectSlugs} from "../common.js"
-import "../styles/displayTable.css"
+import styles from "../styles/displayTable.module.css";
 
 const DisplayTable = () => {
 
@@ -33,14 +33,14 @@ const DisplayTable = () => {
   };
 
   return (
-    <div>
+    <>
       {/*The setOpenBidModal function is passed as a prop to the BidModal component.
        This function can be used within the BidModal component to change the value of openBidModel*/}
       {openBidModel !== false && <BidModal 
         setModal={setOpenBidModal}
         projName={selectedProjName}
         proj={selectedProj} />}
-      <div className="styled-table">
+      <div className={styles.styledTable}>
         <table>
           <thead>
             <tr>
@@ -55,13 +55,13 @@ const DisplayTable = () => {
           <tbody>
             {collections.map((collection,index) => (
               <tr key={index}>
-                <td>{projectNames[index]}</td>
-                <td>{format(collection.stats.floor_price)}</td>
-                <td>{format(collection.stats.market_cap)}</td>
-                <td>{format(collection.stats.thirty_day_volume)}</td>
-                <td>{format(collection.stats.thirty_day_difference)}</td>
+                <td className={styles.tableData}>{projectNames[index]}</td>
+                <td className={styles.tableData}>{format(collection.stats.floor_price)}</td>
+                <td className={styles.tableData}>{format(collection.stats.market_cap)}</td>
+                <td className={styles.tableData}>{format(collection.stats.thirty_day_volume)}</td>
+                <td className={styles.tableData}>{format(collection.stats.thirty_day_difference)}</td>
                 <td>
-                  <button className="selection"
+                  <button className={styles.selection}
                   onClick={() => handleOpenModal(projectNames[index],collection,true)}> bid </button>
                 </td>
               </tr>
@@ -69,7 +69,7 @@ const DisplayTable = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   )
 }
 
