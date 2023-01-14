@@ -78,8 +78,8 @@ h1 {
   cursor: pointer;
 }
 
-#cancelBtn {
-  background-color: crimson;
+.cancelBtn {
+  background-color: crimson!important;
 }
 
 .fancyButton {

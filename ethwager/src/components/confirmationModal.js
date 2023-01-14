@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classnames from 'classnames';
 import styles from "../styles/confirmationModal.module.css";
 
 const ConfirmationModal = (props) => {
@@ -19,8 +20,8 @@ const ConfirmationModal = (props) => {
             <p>Are you sure you want to place a {bid} bid with an expiration of {expiration} days?</p>
           </div>
           <div className={styles.footer}>
-            <button className={styles.cancelButton, styles.fancyButton} onClick={() =>showBidModal(false)}>Cancel</button>
-            <button onClick={handleConfirm}>Confirm</button>
+            <button className={classnames(styles.cancelButton, styles.fancyButton)} onClick={() =>showBidModal(false)}>Cancel</button>
+            <button className={classnames(styles.fancyButton)}onClick={handleConfirm}>Confirm</button>
           </div>
         </div>
       </div>

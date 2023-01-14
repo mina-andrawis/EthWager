@@ -64,29 +64,31 @@ const BidModal = (props) => {
                       <p>Are you bullish or bearish?</p>
                   </div>
                   <div className={styles.bidButtons}>
-                      <button className={bid === 'bullish' ? 'selected fancyButton bullishButton' : 'fancyButton bullishButton'} onClick={() => setBid('bullish')}>
+                      <button className={bid === 'bullish' ? classnames(styles.selected, styles.fancyButton, styles.bullishButton) : classnames(styles.fancyButton, styles.bullishButton)} 
+                      onClick={() => setBid('bullish')}>
                         Bullish
                       </button>
-                      <button className={bid === 'bearish' ? 'selected fancyButton bearishButton' : 'fancyButton bearishButton'} onClick={() => setBid('bearish')}>
+                      <button className={bid === 'bearish' ? classnames(styles.selected, styles.fancyButton, styles.bearishButton) : classnames(styles.fancyButton, styles.bearishButton)} 
+                      onClick={() => setBid('bearish')}>
                         Bearish
                       </button>
                   </div>
               </div>
-              <div className="bottom body" >
+              <div className={classnames(styles.bottom, styles.body)} >
                   <div className="expirationQuestion">
                       <p>When would you like this wager to expire?</p>
                   </div>
                   <div className="expirationButtons">
-                      <button className={expiration === 15 ? "selected fancyButton expirationButton" : "fancyButton expirationButton"} onClick={() => setExpiration(15)}>
+                      <button className={expiration === 15 ? classnames(styles.selected, styles.fancyButton, styles.expirationButton) : classnames(styles.fancyButton, styles.expirationButton)} onClick={() => setExpiration(15)}>
                         15 days
                       </button>
-                      <button className={expiration === 30 ? "selected fancyButton expirationButton" : "fancyButton expirationButton"} onClick={() => setExpiration(30)}>
+                      <button className={expiration === 30 ? classnames(styles.selected, styles.fancyButton, styles.expirationButton) :  classnames(styles.fancyButton, styles.expirationButton)} onClick={() => setExpiration(30)}>
                         30 days
                       </button>
                   </div>
               </div>
-              <div className="footer">
-              <button onClick={() => { setModal(false) }} id="cancelBtn">
+              <div className={styles.footer}>
+              <button onClick={() => { setModal(false) }} className={styles.cancelBtn}>
                   Cancel
               </button>
               <button onClick={handleContinue}>Continue</button>
@@ -100,22 +102,22 @@ const BidModal = (props) => {
   }
 
   return(
-    <div className="modalBackground">
-        <div className="modalContainer">
-            <div className="titleCloseBtn">
+    <div className={styles.modalBackground}>
+        <div className={styles.modalContainer}>
+            <div className={styles.titleCloseBtn}>
                 <button onClick={() => { setModal(false) }}> 
                 X
                 </button>
             </div>
-            <div className="title">
+            <div className={styles.title}>
                 <h1>{projName}</h1>            
                 <h2>The floor price for this project is not available.</h2>
             </div>
-            <div className="body">
+            <div className={styles.body}>
                 <p>Wagering is temporarily disabled until valid floor price data is retreived.</p>
             </div>
-            <div className="footer">
-            <button onClick={() => { setModal(false) }} id="cancelBtn">
+            <div className={styles.footer}>
+            <button onClick={() => { setModal(false) }} className={styles.cancelBtn}>
                 Cancel
             </button>
             </div>
