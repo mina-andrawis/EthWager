@@ -147,7 +147,7 @@ h1 {
   padding: 1rem;
   margin: auto;
   margin-top: 20px!important;
-  margin-bottom: 30px!important;
+  margin-top: 30px!important;
 
   transition: opacity 3s;
   background-color: rgb(255, 255, 255);

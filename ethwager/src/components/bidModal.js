@@ -42,6 +42,7 @@ const BidModal = (props) => {
         showBidModal={setModal}
         showConfirmationModal={setOpenConfirmationModal}
         bid={bid} 
+        expiration={expiration}
         projName={projName} 
         floorprice={proj.floor_price}/>}
 
