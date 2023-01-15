@@ -26,7 +26,7 @@ app.get("/users", async (request, response) => {
   }
 });
 
-app.post("/addWager", async (request, response) => {
+app.post("/create-wager", async (request, response) => {
   const wager = new wagerModel(request.body);
 
   try {

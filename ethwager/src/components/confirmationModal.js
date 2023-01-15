@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classnames from 'classnames';
+import axios from 'axios';
 import styles from "../styles/confirmationModal.module.css";
 import bearishImage from "../images/icons8-bearish-32.png";
 import bullishImage from "../images/icons8-bullish-32.png";
@@ -13,22 +14,35 @@ const ConfirmationModal = (props) => {
   var expirationDate = new Date();
   expirationDate.setDate(currDate.getDate() + expiration);
 
-
-  const handleConfirm = () => {
-    // Perform some action with the bid and expiration values here, such as sending a request to a server to create a new wager
-    // console.log(`Confirmed bid: ${bid}, expiration: ${expiration} days`);
-  };
-  
   const handleVelocity = bid => bid === 'bullish' ? 'above' : 'below';
 
   const handleIcon = bid => {
 
-  if (bid === 'bullish') {
-    return <img alt="bullish icon" src={bullishImage} />;
-  } else if (bid === 'bearish') {
-    return <img alt="bearish icon" src={bearishImage} />
-    }
+    const handleIcon = bid => bid === 'bullish' 
+    ? <img alt="bullish icon" src={bullishImage} /> 
+    : <img alt="bearish icon" src={bearishImage} />;
   }
+
+  const handleConfirm = () => {
+    const data = {
+      email: "test@example.com",
+      wager_id: "123",
+      user_id: "456",
+      project: proj,
+      bid: bid,
+      initial_floor_price: floorprice,
+      expiration: expiration
+    }
+
+    axios.post('http://localhost:3001/create-wager', data)
+      .then(response => {
+        console.log(response.data);
+        // Do something with the response data
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
 
   return (

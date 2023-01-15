@@ -16,10 +16,6 @@ const WagerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  wager_id: {
-    type: String,
-    required: true,
-  },
   user_id: {
     type: String,
     required: true,
