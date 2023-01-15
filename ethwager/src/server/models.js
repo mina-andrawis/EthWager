@@ -12,10 +12,6 @@ const UserSchema = new mongoose.Schema({
 });
 
 const WagerSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    required: true,
-  },
   user_id: {
     type: String,
     required: true,

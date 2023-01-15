@@ -8,7 +8,7 @@ import bullishImage from "../images/icons8-bullish-32.png";
 
 
 const ConfirmationModal = (props) => {
-  const { showBidModal,  proj, bid, expiration, projName, floorprice} = props;
+  const { showBidModal,userid,  proj, bid, expiration, projName, floorprice} = props;
 
   var currDate = new Date();
   var expirationDate = new Date();
@@ -16,24 +16,19 @@ const ConfirmationModal = (props) => {
 
   const handleVelocity = bid => bid === 'bullish' ? 'above' : 'below';
 
-  const handleIcon = bid => {
-
-    const handleIcon = bid => bid === 'bullish' 
-    ? <img alt="bullish icon" src={bullishImage} /> 
-    : <img alt="bearish icon" src={bearishImage} />;
-  }
+  const handleIcon = bid => bid === 'bullish' 
+  ? <img alt="bullish icon" src={bullishImage} /> 
+  : <img alt="bearish icon" src={bearishImage} />;
 
   const handleConfirm = () => {
     const data = {
       email: "test@example.com",
-      wager_id: "123",
-      user_id: "456",
-      project: proj,
-      bid: bid,
+      user_id: userid,
+      collec_name: projName,
+      bid_velocity: bid,
       initial_floor_price: floorprice,
       expiration: expiration
     }
-
     axios.post('http://localhost:3001/create-wager', data)
       .then(response => {
         console.log(response.data);

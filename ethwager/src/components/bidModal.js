@@ -6,7 +6,7 @@ import ConfirmationModal from "./confirmationModal";
 
 const BidModal = (props) => {
 
-  const {setModal,projName, proj} = props;
+  const {setModal,projName, proj, userid} = props;
 
   var [openConfirmationModal, setOpenConfirmationModal] = useState(false);
   var [bid, setBid] = useState(null);
@@ -41,7 +41,8 @@ const BidModal = (props) => {
         bid={bid} 
         expiration={expiration}
         projName={projName} 
-        floorprice={proj.floor_price}/>}
+        floorprice={proj.floor_price}
+        userid={userid}/>}
 
         {!openConfirmationModal &&
           <div className={styles.modalBackground}>
