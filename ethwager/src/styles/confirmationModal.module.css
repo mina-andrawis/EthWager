@@ -39,6 +39,11 @@
   display: flex;
   flex-direction: column;
   padding: 5px;
+  width: fit-content;
+}
+
+.confirmedContainer{
+  padding:50px;
 }
 
  .modalContainer .title {
