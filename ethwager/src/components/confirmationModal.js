@@ -45,14 +45,11 @@ const ConfirmationModal = (props) => {
                   <td>Bid : {bid.charAt(0).toUpperCase() + bid.slice(1)} {handleIcon(bid)}</td>
                 </tr>
                 <tr>
-                <td>Expires on {expirationDate.toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric' })}</td>
+                  <td>Expires on {expirationDate.toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric' })}</td>
                 </tr>
               </tbody>
             </table>
 
-            
-
-            
           </div>
           <div className={styles.body}>
  

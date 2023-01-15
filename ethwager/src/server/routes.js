@@ -1,5 +1,6 @@
 const express = require("express");
-const userModel = require("./models");
+const wagerModel = require("./models")
+const userModel = require("./models")
 
 const app = express();
 
@@ -20,6 +21,17 @@ app.get("/users", async (request, response) => {
 
   try {
     response.send(users);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.post("/addWager", async (request, response) => {
+  const wager = new wagerModel(request.body);
+
+  try {
+    await wager.save();
+    response.send(wager);
   } catch (error) {
     response.status(500).send(error);
   }

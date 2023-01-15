@@ -21,6 +21,7 @@
 	font:bold 1em/1em Arial, Helvetica, sans-serif;
 	text-transform:uppercase;
 	text-shadow: 2px 2px 2px #555;
+
 }
 
 #nav a:hover,
@@ -45,8 +46,7 @@
 	#nav a:visited {
 		margin-top: 30px;
 		padding:20px 40px;
-		font-size: .8em;
-		font:bold 1em/1em Arial, Helvetica, sans-serif;
+		font:bold .8em Arial, Helvetica, sans-serif;
 
 	}
 
