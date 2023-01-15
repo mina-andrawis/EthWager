@@ -6,7 +6,6 @@
 
 #nav li {
 	display:inline-block;
-	
 }
 
 #nav a:link,
@@ -37,9 +36,6 @@
   @media only screen and (min-width: 600px) {
     /* For tablets: */
     
-    .styled-table {
-        font-size: 0.9em;
-    }
   }
   
 @media only screen and (min-width: 769px) {
@@ -49,6 +45,8 @@
 	#nav a:visited {
 		margin-top: 30px;
 		padding:20px 40px;
+		font-size: .8em;
+		font:bold 1em/1em Arial, Helvetica, sans-serif;
 
 	}
 
