@@ -1,5 +1,5 @@
 import React from 'react';
-import FAQ from "../faq/faq.js"
+import FAQ from "../c_faq/faq.js"
 
 const About = () =>{
   return (

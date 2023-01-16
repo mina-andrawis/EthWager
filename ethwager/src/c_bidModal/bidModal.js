@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classnames from 'classnames';
 import styles from "./bidModal.module.css";
 
-import ConfirmationModal from "../confirmationModal/confirmationModal";
+import ConfirmationModal from "../c_confirmationModal/confirmationModal";
 
 const BidModal = (props) => {
 

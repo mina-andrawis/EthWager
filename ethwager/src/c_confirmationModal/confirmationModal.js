@@ -50,7 +50,7 @@ const ConfirmationModal = (props) => {
         <div className={classnames(styles.modalBackground)}>
           <div className={classnames(styles.modalContainer, styles.confirmedContainer)}>
             <div className={classnames(styles.title)}>
-              <h2>Wager Confirmed!</h2>
+              <h2>Your wager has been placed!</h2>
             </div>
             <div className={styles.footer}>
               <button className={classnames(styles.fancyButton)} onClick={() =>showBidModal(false)}>Continue</button>

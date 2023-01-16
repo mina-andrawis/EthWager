@@ -1,4 +1,4 @@
-import Login from "../login_register/login"
+import Login from "../c_login_register/login"
 import useToken from "../hooks/useToken"
 
 
