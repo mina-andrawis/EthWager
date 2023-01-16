@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const Router = require("./routes")
 const cors = require("cors");
 
-
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -19,6 +18,7 @@ mongoose.connect(
     useUnifiedTopology: true
   }
 );
+
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));

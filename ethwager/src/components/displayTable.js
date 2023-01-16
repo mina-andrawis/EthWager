@@ -1,3 +1,4 @@
+import useToken from "../hooks/useToken"
 import React, { useEffect, useState } from "react";
 import BidModal from "./bidModal.js"
 import {projectNames, projectSlugs} from "../common.js"
@@ -9,7 +10,8 @@ const DisplayTable = () => {
   const [openBidModel, setOpenBidModal] = useState(false);
   const [selectedProj, setSelectedProj] = useState('');
   const [selectedProjName, setSelectedProjName] = useState('');
-
+  const { token } = useToken();
+  
   useEffect(() => {
     Promise.all(projectSlugs.map(slug =>
       fetch(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
@@ -39,7 +41,9 @@ const DisplayTable = () => {
       {openBidModel !== false && <BidModal 
         setModal={setOpenBidModal}
         projName={selectedProjName}
-        proj={selectedProj} />}
+        proj={selectedProj}
+        userid={token._id}
+         />}
       <div className={styles.styledTable}>
         <table>
           <thead>
