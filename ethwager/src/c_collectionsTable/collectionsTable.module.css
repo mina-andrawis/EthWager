@@ -4,10 +4,10 @@
     font-size: 0.75em;
     overflow:auto;
     max-width: fit-content;
+    min-width: min-content;
     font-family: Optima;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    overflow: hidden;
     margin-top: 0;
 }
 
@@ -21,7 +21,6 @@
 
 }
 .styledTable td {
-    padding: 12px 15px;
     text-align: center;
     border:none;
 }
@@ -102,7 +101,6 @@ button.selection:hover{
         font-size: 1rem;
         margin: auto;
         padding:10px;
-        padding-left: 10px;
     }
   }
 

@@ -24,27 +24,28 @@ const ActiveWagers = () => {
 
   return (
     <div className={styles.wagerContainer}>
-      <h2 className={styles.title}>Active Wagers</h2>
-      <table className={styles.wagerTable}>
+        <div className={styles.styledTable}>
+        <table>
         <thead>
-          <tr>
+            <tr>
             <th>Project Name</th>
             <th>Bid</th>
             <th>Initial Floor Price</th>
             <th>Expiration Date</th>
-          </tr>
+            </tr>
         </thead>
         <tbody>
-          {wagers.map((wager, index) => (
+            {wagers.map((wager, index) => (
             <tr key={index}>
-            <td>{wager.collec_name}</td>
-              <td>{wager.bid_velocity}</td>
-              <td>{wager.initial_floor_price}</td>
-              <td>{wager.expiration}</td>
+                <td className={styles.tableData}>{wager.collec_name}</td>
+                <td className={styles.tableData}>{wager.bid_velocity}</td>
+                <td className={styles.tableData}>{wager.initial_floor_price}</td>
+                <td className={styles.tableData}>{wager.expiration}</td>
             </tr>
-          ))}
+            ))}
         </tbody>
-      </table>
+        </table>
+      </div>
     </div>
   )
 }

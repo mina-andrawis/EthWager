@@ -1,0 +1,135 @@
+.styledTable {
+    border-collapse: collapse;
+    margin: 30px auto;
+    font-size: 0.75em;
+    overflow:auto;
+    max-width: fit-content;
+    font-family: Optima;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.styledTable th {
+    background-color: #009879;
+    text-align: center;
+    border: none;
+    font-size: 1em!important;
+    white-space: nowrap;
+    color: white;
+}
+
+.styledTable td {
+    padding: 12px 15px;
+    text-align: center;
+    border:none;
+}
+
+.tableData {
+    color: white;
+    text-align: center;
+}
+
+button.selection{
+    background-color: #E3DAC9;
+    border: none ;
+    color: #1C251C;
+    border-radius: 35px;
+    padding: 10px 25px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+button.selection:hover{
+    background-color: #009879;
+    color:white;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+
+    .styledTable {
+        margin: 30px auto;
+        width:  70%;
+    }
+    
+    .styledTable th,
+    .styledTable td {
+        font-size: .9rem;
+        margin: auto;
+    }
+  }
+  
+@media only screen and (min-width: 769px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    .styledTable th,
+    .styledTable td {
+        font-size: 1rem;
+        margin: auto;
+        padding:10px;
+        padding-left: 10px;
+    }
+  }
+
+  @media only screen and (min-width: 1439px) {
+    /* For ultra wide desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    .styledTable {
+        margin: 30px auto;
+    }
+
+    .styledTable th,
+    .styledTable td {
+        margin: auto;
+        font-size: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+  }
