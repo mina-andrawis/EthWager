@@ -1,11 +1,11 @@
 import React from 'react';
-import DisplayTable from '../components/displayTable.js'
+import CollectionsTable from '../collectionsTable/collectionsTable.js'
 
 const Home = () =>{
   return (
     <div>
       <div>
-        <DisplayTable />
+        <CollectionsTable />
       </div>
     </div>
   );

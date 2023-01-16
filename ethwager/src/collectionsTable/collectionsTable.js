@@ -1,10 +1,10 @@
 import useToken from "../hooks/useToken"
 import React, { useEffect, useState } from "react";
-import BidModal from "./bidModal.js"
+import BidModal from "../bidModal/bidModal.js"
 import {projectNames, projectSlugs} from "../common.js"
-import styles from "../styles/displayTable.module.css";
+import styles from "./collectionsTable.module.css";
 
-const DisplayTable = () => {
+const CollectionsTable = () => {
 
   const [collections, setCollections] = useState([]);
   const [openBidModel, setOpenBidModal] = useState(false);
@@ -17,7 +17,6 @@ const DisplayTable = () => {
       fetch(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
       .then(response => response.json())
       )).then(responses => {
-        //console.log(responses)
         setCollections(responses);
     });
   }, []);
@@ -77,4 +76,4 @@ const DisplayTable = () => {
   )
 }
 
-export default DisplayTable;
+export default CollectionsTable;

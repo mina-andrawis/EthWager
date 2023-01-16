@@ -1,4 +1,4 @@
-import Login from "../components/login"
+import Login from "../login_register/login"
 import useToken from "../hooks/useToken"
 
 
