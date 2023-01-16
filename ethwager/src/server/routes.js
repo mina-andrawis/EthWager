@@ -37,4 +37,14 @@ app.post("/create-wager", async (request, response) => {
   }
 });
 
+app.get("/wagers", async (request, response) => {
+  const wagers = await wagerModel.find({});
+
+  try {
+    response.send(wagers);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
 module.exports = app;
