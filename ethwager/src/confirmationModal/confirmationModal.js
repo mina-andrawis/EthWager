@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classnames from 'classnames';
 import axios from 'axios';
-import styles from "../styles/confirmationModal.module.css";
+import styles from "./confirmationModal.module.css";
 import bearishImage from "../images/icons8-bearish-32.png";
 import bullishImage from "../images/icons8-bullish-32.png";
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import classnames from 'classnames';
-import styles from "../styles/bidModal.module.css";
+import styles from "./bidModal.module.css";
 
-import ConfirmationModal from "./confirmationModal";
+import ConfirmationModal from "../confirmationModal/confirmationModal";
 
 const BidModal = (props) => {
 
