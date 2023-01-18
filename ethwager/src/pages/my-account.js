@@ -1,4 +1,4 @@
-import ActiveWagers from "../c_activeWagers/activeWager";
+import ActiveWagers from "../c_activeWagers/activeWagers";
 import Login from "../c_login_register/login"
 import useToken from "../hooks/useToken"
 

@@ -40,7 +40,7 @@ const ActiveWagers = () => {
                 <td className={styles.tableData}>{wager.collec_name}</td>
                 <td className={styles.tableData}>{wager.bid_velocity}</td>
                 <td className={styles.tableData}>{wager.initial_floor_price}</td>
-                <td className={styles.tableData}>{wager.expiration}</td>
+                <td className={styles.tableData}>{(new Date(wager.expiration_date)).toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric' })}</td>
             </tr>
             ))}
         </tbody>

@@ -9,11 +9,11 @@ import bullishImage from "../images/icons8-bullish-32.png";
 
 const ConfirmationModal = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { showBidModal,userid,  proj, bid, expiration, projName, floorprice} = props;
+  const { showBidModal,userid,  proj, bid, expirationLength, projName, floorprice} = props;
 
   var currDate = new Date();
   var expirationDate = new Date();
-  expirationDate.setDate(currDate.getDate() + expiration);
+  expirationDate.setDate(currDate.getDate() + expirationLength);
 
   const handleVelocity = bid => bid === 'bullish' ? 'above' : 'below';
 
@@ -25,12 +25,11 @@ const ConfirmationModal = (props) => {
     setIsSubmitted(false);
 
     const data = {
-      email: "test@example.com",
       user_id: userid,
       collec_name: projName,
       bid_velocity: bid,
       initial_floor_price: floorprice,
-      expiration: expiration
+      expiration_date: expirationDate
     }
     axios.post('http://localhost:3001/create-wager', data)
       .then(response => {
@@ -65,7 +64,7 @@ const ConfirmationModal = (props) => {
               <h1>{projName}</h1>
               <h2>The floor price for this project is: {floorprice} ETH</h2>
               <p><mark>In order to recieve WAGER upon expiration, the floor price must be {handleVelocity(bid)} {floorprice} ETH
-              for a mimumum of {Math.round((expiration/2))} days.</mark></p>
+              for a mimumum of {Math.round((expirationLength/2))} days.</mark></p>
               <table>
                 <tbody>
                   <tr>
@@ -80,7 +79,7 @@ const ConfirmationModal = (props) => {
             </div>
             <div className={styles.body}>
   
-              <p>Are you sure you want to place a {bid} bid with an expiration of {expiration} days?</p>
+              <p>Are you sure you want to place a {bid} bid with an expiration of {expirationLength} days?</p>
 
             </div>
             <div className={styles.footer}>
