@@ -25,6 +25,7 @@ const ActiveWagers = () => {
   return (
     <div className={styles.wagerContainer}>
         <div className={styles.styledTable}>
+          <h2>Active Wagers</h2>
         <table>
         <thead>
             <tr>

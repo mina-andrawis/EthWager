@@ -5,7 +5,6 @@
     overflow:auto;
     max-width: fit-content;
     font-family: Optima;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     overflow: hidden;
     margin-top: 0;
@@ -13,7 +12,7 @@
 
 .styledTable th {
     background-color: #009879;
-    text-align: center;
+    text-align: left;
     border: none;
     font-size: 1em!important;
     white-space: nowrap;
@@ -21,7 +20,7 @@
 }
 .styledTable td {
     padding: 12px 15px;
-    text-align: center;
+    text-align: left;
     border:none;
 }
 

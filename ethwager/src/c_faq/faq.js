@@ -7,15 +7,15 @@ const FAQ = () => {
     <div className="container">
       <h1>About Eth Wager</h1>
 
+
+        <p>
+          Eth Wager is a user-friendly platform that allows individuals to wager on the price action of large-cap NFT projects on the Ethereum blockchain.
+          Users can easily explore the most popular Ethereum projects, betting on whether the project's price will increase or decrease over a set period of time. 
+          If the user succeeds in their wager, they will be rewarded with a limited-value coin (WAGER) if their prediction is correct more days than not until the wager's expiration date!
+        </p>
+        
         <h2>Frequently Asked Questions</h2>
 
-        <h3>What is Eth Wager?</h3>
-          <p>
-            Eth Wager aims to be a user-friendly platform that allows individuals to wager on the price action of large-cap NFT projects on the Ethereum blockchain.
-            Users can easily explore the most popular Ethereum projects, betting on whether the project's price will increase or decrease over a set period of time. 
-            If the user succeeds in their wager, they will be rewarded with a limited-value coin (WAGER) if their prediction is correct more days than not until the wager's expiration date!
-          </p>
-        
         <h3>How do I get started?</h3>
           <p>  
             To get started, users must first create an account on the Eth Wager platform. After registering, users must log into their account to wager on
