@@ -5,9 +5,9 @@ import useToken from "./hooks/useToken";
 import Home from "./pages/home"
 import About from "./pages/about"
 import MyAccount from "./pages/my-account"
-import Navbar from "./navbar/navbar"
-import Login from "./login_register/login"
-import Register from "./login_register/register"
+import Navbar from "./c_navbar/navbar"
+import Login from "./c_login_register/login"
+import Register from "./c_login_register/register"
 
 
 const App = () => {
