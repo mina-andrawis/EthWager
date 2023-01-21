@@ -17,8 +17,8 @@ Requirements V1
 * When shall this wager expire? 15 days? 30 days? ✔️
 * Explanation of system ✔️
 * Allow user to connect metamask wallet, for reward deposit
-* Account page will have all active wagers and expired wagers with relevant information
-* Active Wagers:
+* Account page will have all active wagers and expired wagers with relevant information✔️
+* Active Wagers:✔️
 * Days in the money vs out of the money
 * Days left in wager
 * Account creation will require email address and password ✔️
