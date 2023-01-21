@@ -1,4 +1,4 @@
-import ActiveWagers from "../c_activeWagers/activeWagers";
+import AllWagers from "../c_allWagers/allWagers";
 import Login from "../c_login_register/login"
 import useToken from "../hooks/useToken"
 
@@ -16,7 +16,7 @@ const MyAccount = () =>{
       <div>
         <h1>{token.email ? `Logged in as ${token.email}` : 'Not logged in'}</h1>
 
-        <ActiveWagers />
+        <AllWagers />
       </div>
     </div>
   );
