@@ -13,8 +13,8 @@ const AuthButton = () => {
             <p>Hello, {token.email}</p>
           ) : ( 
             <>
-                <NavLink to="/register">Register User</NavLink>
-                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/register"><p>Register</p></NavLink>
+                <NavLink to="/login"><p>Login</p></NavLink>
             </>
           )}
         </div>

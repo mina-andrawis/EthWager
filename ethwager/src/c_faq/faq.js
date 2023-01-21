@@ -1,12 +1,11 @@
 import React from 'react';
-import "./faq.css"
+import styles from "./faq.module.css"
 
 const FAQ = () => {
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <h1>About Eth Wager</h1>
-
 
         <p>
           Eth Wager is a user-friendly platform that allows individuals to wager on the price action of large-cap NFT projects on the Ethereum blockchain.
