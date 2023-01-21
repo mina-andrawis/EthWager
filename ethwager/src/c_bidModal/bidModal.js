@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classnames from 'classnames';
 import styles from "./bidModal.module.css";
 
-import ConfirmationModal from "../confirmationModal/confirmationModal";
+import ConfirmationModal from "../c_confirmationModal/confirmationModal";
 
 const BidModal = (props) => {
 
@@ -10,18 +10,18 @@ const BidModal = (props) => {
 
   var [openConfirmationModal, setOpenConfirmationModal] = useState(false);
   var [bid, setBid] = useState(null);
-  var [expiration, setExpiration] = useState(null);
+  var [expirationLength, setExpirationLength] = useState(null);
   var [error, setError] = useState(false);
 
-  if (expiration && bid)
+  if (expirationLength && bid)
   {
     console.log("bid and expiration:");
     console.log(bid);
-    console.log(expiration);
+    console.log(expirationLength);
   }
 
   const handleContinue = () => {
-    if (bid && expiration) {
+    if (bid && expirationLength) {
       setOpenConfirmationModal(true);
     }
     else {
@@ -39,7 +39,7 @@ const BidModal = (props) => {
         showBidModal={setModal}
         showConfirmationModal={setOpenConfirmationModal}
         bid={bid} 
-        expiration={expiration}
+        expirationLength={expirationLength}
         projName={projName} 
         floorprice={proj.floor_price}
         userid={userid}/>}
@@ -76,10 +76,10 @@ const BidModal = (props) => {
                       <p>When would you like this wager to expire?</p>
                   </div>
                   <div className="expirationButtons">
-                      <button className={expiration === 15 ? classnames(styles.selected, styles.fancyButton, styles.expirationButton) : classnames(styles.fancyButton, styles.expirationButton)} onClick={() => setExpiration(15)}>
+                      <button className={expirationLength === 15 ? classnames(styles.selected, styles.fancyButton, styles.expirationButton) : classnames(styles.fancyButton, styles.expirationButton)} onClick={() => setExpirationLength(15)}>
                         15 days
                       </button>
-                      <button className={expiration === 30 ? classnames(styles.selected, styles.fancyButton, styles.expirationButton) :  classnames(styles.fancyButton, styles.expirationButton)} onClick={() => setExpiration(30)}>
+                      <button className={expirationLength === 30 ? classnames(styles.selected, styles.fancyButton, styles.expirationButton) :  classnames(styles.fancyButton, styles.expirationButton)} onClick={() => setExpirationLength(30)}>
                         30 days
                       </button>
                   </div>

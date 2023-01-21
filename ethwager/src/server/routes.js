@@ -47,4 +47,15 @@ app.get("/wagers", async (request, response) => {
   }
 });
 
+app.get("/wagers/:userId", async (request, response) => {
+  const userId = request.params.userId;
+  const allwagers = await wagerModel.find({user_id: userId});
+  
+  try {
+  response.send(allwagers);
+  } catch (error) {
+  response.status(500).send(error);
+  }
+});
+
 module.exports = app;

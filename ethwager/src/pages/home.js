@@ -1,5 +1,5 @@
 import React from 'react';
-import CollectionsTable from '../collectionsTable/collectionsTable.js'
+import CollectionsTable from '../c_collectionsTable/collectionsTable.js'
 
 const Home = () =>{
   return (

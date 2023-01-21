@@ -1,6 +1,6 @@
 import useToken from "../hooks/useToken"
 import React, { useEffect, useState } from "react";
-import BidModal from "../bidModal/bidModal.js"
+import BidModal from "../c_bidModal/bidModal.js"
 import {projectNames, projectSlugs} from "../common.js"
 import styles from "./collectionsTable.module.css";
 

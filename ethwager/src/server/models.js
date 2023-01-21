@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const wagerSchema = new mongoose.Schema({
+const WagerSchema = new mongoose.Schema({
   user_id: {
     type: String,
     required: true,
@@ -28,10 +28,14 @@ const wagerSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  expiration_date: { 
+    type: String,
+    required: false,
+  },
 });
 
-const userModel = mongoose.model("User", userSchema);
-const wagerModel = mongoose.model("Wager", wagerSchema);
+const userModel = mongoose.model("User", UserSchema);
+const wagerModel = mongoose.model("Wager", WagerSchema);
 
 module.exports = userModel;
 module.exports = wagerModel;
