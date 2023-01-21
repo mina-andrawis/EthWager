@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import styles from "./loginRegister.module.css";
+import classnames from 'classnames';
 import axios from 'axios';
 
 function Register() {
@@ -62,9 +64,9 @@ function Register() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="login-container">
+      <form onSubmit={handleSubmit} className={styles.loginContainer}>
         
-        <button className="titleBackBtn">
+        <button className={styles.titleBackBtn}>
           <Link to="/login">←</Link>
         </button>
         <label htmlFor="email">Email:</label>
@@ -83,7 +85,7 @@ function Register() {
           value={formData.password}
           onChange={handleChange}/>
         <br />
-        <button className="fancyButton defaultBtn" type="submit">Register</button>
+        <button className={classnames(styles.fancyButton, styles.defaultBtn)} type="submit">Register</button>
 
       </form>
       {message && <div className="message">{message}</div>}

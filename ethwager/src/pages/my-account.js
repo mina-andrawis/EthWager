@@ -1,6 +1,7 @@
 import AllWagers from "../c_allWagers/allWagers";
 import Login from "../c_login_register/login"
 import useToken from "../hooks/useToken"
+import AuthButton from "../c_authButton/authButton.js"
 
 
 const MyAccount = () =>{

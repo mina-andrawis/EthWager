@@ -6,7 +6,7 @@ p {
   padding: 15px;
 }
 
-.login-container {
+.loginContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,7 +108,7 @@ a {
 
 @media only screen and (min-width: 600px) {
   /* For tablets: */
-  .login-container {
+  .loginContainer {
     display: flex;
     flex-direction: column;
     align-items: center;

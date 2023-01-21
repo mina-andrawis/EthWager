@@ -42,7 +42,6 @@ const ConfirmationModal = (props) => {
       });
   };
 
-
   return (
     <>
       {isSubmitted && 
@@ -52,7 +51,7 @@ const ConfirmationModal = (props) => {
               <h2>Your wager has been placed!</h2>
             </div>
             <div className={styles.footer}>
-              <button className={classnames(styles.fancyButton)} onClick={() =>showBidModal(false)}>Continue</button>
+              <button className={classnames(styles.fancyButton)} onClick={() =>showBidModal(false)}>OK</button>
             </div>
           </div>
         </div>

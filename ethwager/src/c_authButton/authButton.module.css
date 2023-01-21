@@ -1,0 +1,14 @@
+.authButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.authButtonContainer button {
+    position: absolute;
+    margin-top: 15px;
+    margin-right: 25px;
+    right: 0;
+    background-color: transparent;
+    text-align: end;
+    margin-right: 30px
+}
