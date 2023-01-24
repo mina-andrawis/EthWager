@@ -1,10 +1,10 @@
 const express = require("express");
-const wagerModel = require("./models")
-const userModel = require("./models")
+const wagerModel = require("./models/wagerModel")
+const userModel = require("./models/userModel")
 
 const app = express();
 
-app.post("/register", async (request, response) => {
+app.post("/auth/register", async (request, response) => {
   
   const user = new userModel(request.body);
 

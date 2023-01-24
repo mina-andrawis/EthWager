@@ -41,7 +41,7 @@ function Register() {
         setMessage('A user with that email already exists');
         return;
       } 
-      await axios.post("http://localhost:3001/register", formData);
+      await axios.post("http://localhost:3001/auth/register", formData);
       setMessage('Successfully registered');
       setError(false);
     } catch (error) {
