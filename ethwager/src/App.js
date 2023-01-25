@@ -8,7 +8,7 @@ import MyAccount from "./pages/my-account"
 import Navbar from "./c_navbar/navbar"
 import Login from "./c_login_register/login"
 import Register from "./c_login_register/register"
-import AuthButton from "./c_authButton/authButton"
+import Header from "./c_header/header"
 
 const App = () => {
   
@@ -18,7 +18,7 @@ const App = () => {
     <div className="App">
 
       <BrowserRouter>
-      <AuthButton/>
+      <Header/>
 
         <Navbar />
         

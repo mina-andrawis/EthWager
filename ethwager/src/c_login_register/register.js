@@ -88,8 +88,8 @@ function Register() {
         <button className={classnames(styles.fancyButton, styles.defaultBtn)} type="submit">Register</button>
 
       </form>
-      {message && <div className="message">{message}</div>}
-      {error && <div className="error message">{error.message}</div>}
+      {message && <div className={styles.message}>{message}</div>}
+      {error && <div className={classnames(styles.error, styles.message)}>{error.message}</div>}
 
     </>
   );

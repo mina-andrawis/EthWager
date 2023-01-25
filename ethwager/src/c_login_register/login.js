@@ -51,7 +51,6 @@ const Login = ({setToken}) => {
   return (
     <>
       <form onSubmit={handleSubmit} className={styles.loginContainer}>
-        
         <label htmlFor="email">Email:</label>
         <input
           type="email"
