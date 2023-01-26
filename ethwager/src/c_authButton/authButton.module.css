@@ -1,6 +1,6 @@
 .authButtonContainer p {
     display: inline-block;
-    margin: 15px 25px;
+    margin: 15px 25px!important;
     padding: 0!important;
     background-color: transparent;
     text-align: right;

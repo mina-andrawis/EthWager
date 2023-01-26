@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
-import AuthButton from "../c_authButton/authButton.js"
 
 const Navbar= () =>{
   return (
@@ -14,11 +13,11 @@ const Navbar= () =>{
       <Link to="/about">About</Link>
     </li>
     <li>
-      <Link to="/my-account" >My Account</Link>
+      <Link to="/my-account" className={styles.navBorderb}>My Account</Link>
     </li>
-    <li>
-      <a href="https://github.com/mina-andrawis" className={styles.navBorderb} target="_blank" rel="noreferrer">Developed by Mina</a>
-    </li>
+    {/* <li>
+      <a href="https://github.com/mina-andrawis"  target="_blank" rel="noreferrer">Developed by Mina</a>
+    </li> */}
   </ul>
   </>
   );

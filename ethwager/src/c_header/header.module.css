@@ -1,23 +1,23 @@
 .headerContainer {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     background: linear-gradient(to right, #009879, 30% , transparent);
-    height: 60px;
+    height: fit-content;
+    text-align: center;
 }
-
 
 @media only screen and (min-width: 600px) {
     /* For tablets: */
     .headerContainer {
-        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        height: fit-content;
     }
   }
   
   @media only screen and (min-width: 769px) {
     /* For desktop: */
-    .headerContainer {
-        height: 60px;
-    }
 
   }
   
