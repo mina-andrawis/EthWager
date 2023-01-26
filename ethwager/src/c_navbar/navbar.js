@@ -15,9 +15,6 @@ const Navbar= () =>{
     <li>
       <Link to="/my-account" className={styles.navBorderb}>My Account</Link>
     </li>
-    {/* <li>
-      <a href="https://github.com/mina-andrawis"  target="_blank" rel="noreferrer">Developed by Mina</a>
-    </li> */}
   </ul>
   </>
   );
