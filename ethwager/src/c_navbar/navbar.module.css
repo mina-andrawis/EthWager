@@ -2,6 +2,7 @@
   	padding: 0;
   	text-align: center;
 	margin-top: 15px ;
+	font-size: 1em;
 }
 
 .nav li {
@@ -52,7 +53,6 @@ width: 100%;
 	#nav a:link,
 	#nav a:visited {
 		padding:20px 40px;
-		font:bold .8em Arial, Helvetica, sans-serif;
 
 	}
 

@@ -16,7 +16,9 @@ h1 {
   background-color: #ced4da80;
   margin-top:-30vh;
 }
-
+h2 {
+  text-align: center!important;
+}
 .modalContainer {
   width: 800px;
   height: fit-content;
