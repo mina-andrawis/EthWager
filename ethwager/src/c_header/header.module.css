@@ -5,6 +5,7 @@
     height: 60px;
 }
 
+
 @media only screen and (min-width: 600px) {
     /* For tablets: */
     .headerContainer {

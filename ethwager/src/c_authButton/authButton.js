@@ -13,14 +13,14 @@ const AuthButton = () => {
       window.location.reload();
     }
 
-    const token = localStorage.getItem('token');
-
+    var token = localStorage.getItem('token');
+    var email = JSON.parse(token)?.email; 
     return (
         <div className={styles.authButtonContainer}>
           {token ? (
             <>
-              <p>Hello, {token.email}</p>
-              <p><button onClick={logout}>Logout</button></p>
+              <p>Hello, {email}</p>
+              <button onClick={logout}><p>Logout</p></button>
             </>
           ) : ( 
             <>
