@@ -1,7 +1,8 @@
 .nav {
-	margin-top: 30px;
   	padding: 0;
   	text-align: center;
+	margin-top: 15px ;
+	font-size: 1em;
 }
 
 .nav li {
@@ -12,13 +13,11 @@
 .nav a:visited {
 	color:#000;
 	background:#009879;
-	margin-bottom: 10px;
-	margin-top: 10px;
 	display: inherit;
 	padding:10px 25px;
 	width:auto;
 	text-decoration:none;
-	font:bold 1.1em Arial, Helvetica, sans-serif;
+	font:bold .7em Arial, Helvetica, sans-serif;
 	text-transform:uppercase;
 	text-shadow: 2px 2px 2px #555;
 }
@@ -36,32 +35,27 @@ width: 100%;
 @media only screen and (min-width: 600px) {
 /* For tablets: */
 
+.navBorderb {
+	border-top-right-radius:30px;
+	border-bottom-right-radius:30px;  
+}
+
 }
 
 @media only screen and (min-width: 769px) {
 /* For desktop: */
 	.nav {
-		margin-top: 30px;
 		padding: 0;
 		text-align: center;
+		margin-top: 15px ;
 	}
 	
 	#nav a:link,
 	#nav a:visited {
-		margin-top: 30px;
 		padding:20px 40px;
-		font:bold .8em Arial, Helvetica, sans-serif;
 
 	}
 
-	.navBordera {
-		border-top-left-radius:30px;
-		border-bottom-left-radius:30px;   
-	}
 
-	.navBorderb {
-		border-top-right-radius:30px;
-		border-bottom-right-radius:30px;  
-	}
 
 }

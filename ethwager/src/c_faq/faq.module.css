@@ -15,7 +15,7 @@ h1 {
   text-align: center;
 }
 
-h2 {
+.container h2 {
   font-size: 24px;
   margin: 16px 0;
   text-align: center;
@@ -26,14 +26,13 @@ h3 {
   margin: 8px;
 }
 
-p {
-  font-size: 14px;
+.container p {
+  font-size: 20px;
   line-height: 1.5;
   margin: 0 0 16px 0;
 }
 
 .container {
-  max-width: 800px;
   margin: 0 auto;
   padding: 16px;
 }
@@ -59,9 +58,10 @@ p {
     margin: 16px 0;
   }
   
-  h2 {
+  .container h2 {
     font-size: 35px;
     margin: 25px 0;
+    text-align: center;
   }
   
   h3 {
@@ -69,7 +69,7 @@ p {
     margin-top: 40px;
   }
   
-  p {
+  .container p {
     font-size: 20px;
     line-height: 1.5;
     margin: 0 0 16px 0;

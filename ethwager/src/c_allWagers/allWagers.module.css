@@ -15,9 +15,10 @@ h2 {
 }
 
 img {
-    width: 50px;
+    width: 70px;
     height: 40px;
 }
+
 .styledTable th {
     background-color: #009879;
     text-align: left;

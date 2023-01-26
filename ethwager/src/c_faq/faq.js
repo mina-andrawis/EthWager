@@ -1,12 +1,11 @@
 import React from 'react';
-import "./faq.css"
+import styles from "./faq.module.css"
 
 const FAQ = () => {
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <h1>About Eth Wager</h1>
-
 
         <p>
           Eth Wager is a user-friendly platform that allows individuals to wager on the price action of large-cap NFT projects on the Ethereum blockchain.
@@ -18,24 +17,22 @@ const FAQ = () => {
 
         <h3>How do I get started?</h3>
           <p>  
-            To get started, users must first create an account on the Eth Wager platform. After registering, users must log into their account to wager on
-            projects and view data regarding any active or expired wagers. Users are only required to log in once, as this data is stored in local memory, for
-            the sake of convenience. Once you have logged into your account, you can begin making wagers on your favorite NFT projects!
+            To get started, you'll first create an account using your email and a secure password platform. After registering and logging in, you'll be able to wager on
+            projects and view data regarding any of your active or expired wagers!
           </p>
  
         <h3>Bullish or Bearish?</h3>
           <p>
-            Users can choose to bet on whether a chosen project's floor price will increase <b>(bullish)</b> or decrease <b>(bearish)</b> from the current floor price, over a set period of time, 
-            either 15 to 30 days. If the user's price-action prediction is correct more days than not until the wager's expiration date, 
+            You can choose to bet whether a chosen project's floor price will increase <b>(bullish)</b> or decrease <b>(bearish)</b> from the current floor price, over a set period of time, 
+            either 15 or 30 days. If the user's price-action prediction is correct more days than not until the wager's expiration date, 
             they will be rewarded with WAGER coins.
           </p>
 
-        <h3>Is it possible to cheat on Eth Wager?</h3>
+        <h3>Who's behind Eth Wager?</h3>
           <p>
-            Eth Wager has implemented several measures to discourage bad actors from attempting to manipulate the system or game the platform. 
-            By requiring users to make a prediction over a set period of time, Eth Wager aims to limit the potential for users to manipulate the price of NFT projects by 
-            significantly dropping the floor price. Though with enough time and effort, it is possible for a user to manipulate the price of an NFT project, there isn't much
-            point since the rewarded token (WAGER) has no real-world value outside of the Eth Wager platform.
+          Hey there! My name is Mina Andrawis and I'm the creator of the Eth Wager platform. I'm based in Charleston, SC and this platform is something I'm really passionate about. I'm excited to be able to share it with you and the rest of the world!
+
+          Feel free to visit my github page <a href="https://github.com/mina-andrawis" target="_blank" rel="noreferrer">here</a> to see more of my work!
           </p>      
     </div>
   )

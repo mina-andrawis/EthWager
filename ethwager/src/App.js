@@ -8,7 +8,7 @@ import MyAccount from "./pages/my-account"
 import Navbar from "./c_navbar/navbar"
 import Login from "./c_login_register/login"
 import Register from "./c_login_register/register"
-
+import Header from "./c_header/header"
 
 const App = () => {
   
@@ -18,7 +18,9 @@ const App = () => {
     <div className="App">
 
       <BrowserRouter>
-        <Navbar />
+      <Header/>
+
+        {/* <Navbar /> */}
         
         <Routes>
           <Route path='/' element={<Home/>} />
