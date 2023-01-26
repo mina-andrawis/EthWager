@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
-//import useToken from '../hooks/useToken'
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./loginRegister.module.css";
 import classnames from 'classnames';
-
-
 
 const Login = ({setToken}) => {
   const [email, setEmail] = useState('');
@@ -14,7 +11,8 @@ const Login = ({setToken}) => {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [error, setError] = useState(null);
 
-  
+  const navigate = useNavigate()
+
   Login.propTypes = {
     setToken: PropTypes.func.isRequired
   }
@@ -32,12 +30,11 @@ const Login = ({setToken}) => {
 
       if (user) {
         // set token to store pass as a prop to store login data in local memory
-        console.log(token);
         var token = user;
         setToken(token);
         setError(false);
         setIsLoggingIn(false);
-        window.location.reload();
+        navigate('/my-account');
       } else {
         setError(new Error("Incorrect email or password"));
         setIsLoggingIn(false);
@@ -72,7 +69,7 @@ const Login = ({setToken}) => {
         </>
         <p>If you do not have an account, register <Link to="/register">here</Link></p>
       </form>
-      {error && <div className={classnames(styles.fancyButton, styles.defaultBtn)}>{error.message}</div>}
+      {error && <div className={classnames(styles.message, styles.error)}>{error.message}</div>}
       
     </>
   );

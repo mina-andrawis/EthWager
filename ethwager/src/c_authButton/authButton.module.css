@@ -1,10 +1,9 @@
-.authButtonContainer button p {
-    position: absolute;
+.authButtonContainer p {
+    display: inline-block;
     margin: 15px 25px;
     padding: 0!important;
-    right: 0;
     background-color: transparent;
-    text-align: end;
-    color: #009879;
-    font-family: Optima;
+    text-align: right;
+    color: white;
+    font-family: Roboto;
 }

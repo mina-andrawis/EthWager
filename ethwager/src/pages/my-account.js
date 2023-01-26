@@ -15,7 +15,7 @@ const MyAccount = () =>{
   return (
     <div>
       <div>
-        <h1>{token.email ? `Logged in as ${token.email}` : 'Not logged in'}</h1>
+        {/*<h1>{token.email ? `Logged in as ${token.email}` : 'Not logged in'}</h1>*/}
 
         <AllWagers />
       </div>

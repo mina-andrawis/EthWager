@@ -5,8 +5,6 @@ import useToken from "../hooks/useToken";
 import AuthButton from "../c_authButton/authButton";
 
 const Header = () => {
-    const { token } = useToken();
-
     return (
         <div className={styles.headerContainer}>
           <AuthButton />
