@@ -58,7 +58,7 @@ app.get("/wagers/:userId", async (request, response) => {
 // *************** //
 // progress routes //
 // *************** //
-app.post("/create-progress/:wagerId", async (request, response) => {
+app.post("/create-progress", async (request, response) => {
   const progress = new progressModel(request.body);
 
   try {
@@ -71,10 +71,10 @@ app.post("/create-progress/:wagerId", async (request, response) => {
 
 app.get("/progress/:wagerId", async (request, response) => {
   const wagerId = request.params.userId;
-  const totalProgress = await wagerModel.find({wager_id: wagerId});
+  const wagerProgress = await wagerModel.find({wager_id: wagerId});
   
   try {
-    response.send(totalProgress);
+    response.send(wagerProgress);
   } catch (error) {
     response.status(500).send(error);
   }

@@ -5,12 +5,19 @@ const ProgressSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  user_id: {   
+    type: String,
+    required: true,
+  },
   initial_floor: {
     type: String,
     required: true,
   },
-  current_floor: {
-    type: String
+  floor_data: {
+    type: Array
+  },
+  date_data: {
+    type: Array
   },
 });
 

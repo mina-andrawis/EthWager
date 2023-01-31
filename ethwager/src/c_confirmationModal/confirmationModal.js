@@ -6,7 +6,6 @@ import bearishImage from "../images/icons8-bearish-32.png";
 import bullishImage from "../images/icons8-bullish-32.png";
 
 
-
 const ConfirmationModal = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { showBidModal, userid,  proj, bid, expirationLength, projName, floorprice} = props;
@@ -24,18 +23,36 @@ const ConfirmationModal = (props) => {
   const handleConfirm = () => {
     setIsSubmitted(false);
 
-    const data = {
+    const wagerData = {
       user_id: userid,
       collec_name: projName,
       bid_velocity: bid,
       initial_floor_price: floorprice,
       expiration_date: expirationDate
     }
-    axios.post('http://localhost:3001/create-wager', data)
+    const progressData = {
+      wager_id: null,
+      user_id: userid,
+      initial_floor: floorprice,
+      floor_data: [],
+      date_data: []
+    }
+    axios.post('http://localhost:3001/create-wager', wagerData)
       .then(response => {
         console.log(response.data);
+        progressData.wager_id = response.data._id;
         setIsSubmitted(true);
-        
+
+        // Make a second API call with the updated wagerData object
+        axios.post('http://localhost:3001/create-progress', progressData)
+          .then(response => {
+            console.log(response.data);
+            setIsSubmitted(true);
+            
+          })
+          .catch(error => {
+            console.log(error);
+          });
       })
       .catch(error => {
         console.log(error);
