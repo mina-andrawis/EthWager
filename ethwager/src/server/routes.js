@@ -70,7 +70,7 @@ app.post("/create-progress", async (request, response) => {
 });
 
 app.get("/progress/:wagerId", async (request, response) => {
-  const wagerId = request.params.userId;
+  const wagerId = request.params.wager_id;
   const wagerProgress = await wagerModel.find({wager_id: wagerId});
   
   try {

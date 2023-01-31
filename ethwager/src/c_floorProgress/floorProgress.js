@@ -5,7 +5,8 @@ import {projectNames, projectSlugs} from "../common.js"
 const FloorProgress = () => {
   
   //pass in wager id to retrieve the current floor price of the collection, storing it in monogodb
-  const [floorPrices, setFloorPrices] = useState([]);
+  const [currentFloor, setCurrentFloor] = useState([]);
+
 
   return (
   <>
