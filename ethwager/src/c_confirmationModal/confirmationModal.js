@@ -9,7 +9,7 @@ import bullishImage from "../images/icons8-bullish-32.png";
 
 const ConfirmationModal = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { showBidModal,userid,  proj, bid, expirationLength, projName, floorprice} = props;
+  const { showBidModal, userid,  proj, bid, expirationLength, projName, floorprice} = props;
 
   var currDate = new Date();
   var expirationDate = new Date();

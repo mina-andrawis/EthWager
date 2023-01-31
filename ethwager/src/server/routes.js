@@ -1,9 +1,13 @@
 const express = require("express");
 const wagerModel = require("./models/wagerModel")
 const userModel = require("./models/userModel")
+const progressModel = require("./models/progressModel")
 
 const app = express();
 
+// *********** //
+// auth routes //
+// *********** //
 app.post("/auth/register", async (request, response) => {
   
   const user = new userModel(request.body);
@@ -26,22 +30,15 @@ app.get("/users", async (request, response) => {
   }
 });
 
+// ************ //
+// wager routes //
+// ************ //
 app.post("/create-wager", async (request, response) => {
   const wager = new wagerModel(request.body);
 
   try {
     await wager.save();
     response.send(wager);
-  } catch (error) {
-    response.status(500).send(error);
-  }
-});
-
-app.get("/wagers", async (request, response) => {
-  const wagers = await wagerModel.find({});
-
-  try {
-    response.send(wagers);
   } catch (error) {
     response.status(500).send(error);
   }
@@ -57,5 +54,32 @@ app.get("/wagers/:userId", async (request, response) => {
   response.status(500).send(error);
   }
 });
+
+// *************** //
+// progress routes //
+// *************** //
+app.post("/create-progress/:wagerId", async (request, response) => {
+  const progress = new progressModel(request.body);
+
+  try {
+    await progress.save();
+    response.send(progress);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.get("/progress/:wagerId", async (request, response) => {
+  const wagerId = request.params.userId;
+  const totalProgress = await wagerModel.find({wager_id: wagerId});
+  
+  try {
+    response.send(totalProgress);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+
 
 module.exports = app;
