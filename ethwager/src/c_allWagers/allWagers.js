@@ -3,7 +3,7 @@ import axios from 'axios';
 import styles from './allWagers.module.css';
 import useToken from "../hooks/useToken";
 import expiredIcon from "../images/expired.png";
-import useProgressTracker from '../hooks/useProgressTracker';
+import FloorProgress from '../c_floorProgress/floorProgress.js';
 
 const AllWagers = () => {
   const [wagers, setWagers] = useState([]);
@@ -25,7 +25,7 @@ const AllWagers = () => {
       });
   }, []);
 
-
+  
   const handleExpiredIcon = expiredStatus => {
     if(expiredStatus === true) 
     {
@@ -66,6 +66,7 @@ const AllWagers = () => {
                 <td className={styles.tableData}>{wager.bid_velocity}</td>
                 <td className={styles.tableData}>{wager.initial_floor_price}</td>
                 <td className={styles.tableData}>{(new Date(wager.expiration_date)).toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric' })}</td>
+                <FloorProgress wagerId={wager._id} />
                 {calculateExpiredStatus(wager)}
                 <td> {handleExpiredIcon(wager.expiredStatus)} </td>
             </tr>

@@ -13,8 +13,9 @@ const useProgressTracker = (wager_id) => {
     });
 
     const retrieveProgress = () => {
-        axios.get(`http://localhost:3001/get-progress/${wager_id}`)
+        axios.get(`http://localhost:3001/progress/${wager_id}`)
         .then(response => {
+          console.log("isnide retrieveProgress");
             console.log(response.data);
             setProjectName(response.data.collec_name);
             setProgressId(response.data._id);
@@ -22,9 +23,8 @@ const useProgressTracker = (wager_id) => {
             setFormData.dateArray(response.data.date_data);
         })
       }
-      retrieveProgress();
 
-    const slug = findProjSlug(projectName);
+    const slug = findProjSlug("Moonbirds");
     const retrieveCurrentData = () => {
         axios.get(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
         .then(response => {
@@ -33,11 +33,10 @@ const useProgressTracker = (wager_id) => {
           setFormData.dateArray(...formData ,new Date().getDate());
         })
       }
-      retrieveCurrentData();
       
 
   return {
-
+    
   }
 }
 
