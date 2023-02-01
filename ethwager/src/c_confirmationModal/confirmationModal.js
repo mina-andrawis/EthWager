@@ -32,6 +32,7 @@ const ConfirmationModal = (props) => {
     }
     const progressData = {
       wager_id: null,
+      collec_name: null,
       user_id: userid,
       initial_floor: floorprice,
       floor_data: [],
@@ -41,6 +42,7 @@ const ConfirmationModal = (props) => {
       .then(response => {
         console.log(response.data);
         progressData.wager_id = response.data._id;
+        progressData.slug_name = response.data.slug_name;
         setIsSubmitted(true);
 
         // Make a second API call with the updated wagerData object

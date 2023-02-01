@@ -80,6 +80,28 @@ app.get("/progress/:wagerId", async (request, response) => {
   }
 });
 
+app.patch("/update-progress", async (request, response) => {
+  try {
+  const id = request.body._id;
+  const newFloor = request.body.floor_data;
+  const currentDate = new Date();
+  
+  const updatedProgress = await progressModel.findOneAndUpdate(
+    {_id: id}, 
+    {$push: {floor_data: newFloor, date_data: currentDate}},
+    {new: true}
+  );
+  
+  if (!updatedProgress) {
+    return response.status(404).send("Progress not found");
+  }
+  
+  response.send(updatedProgress);
+  } catch (error) {
+  response.status(500).send(error);
+  }
+  });
+
 
 
 module.exports = app;

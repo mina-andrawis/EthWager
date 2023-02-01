@@ -9,6 +9,10 @@ const ProgressSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  collec_name: {
+    type: String,
+    required: true,
+  },
   initial_floor: {
     type: String,
     required: true,
