@@ -3,7 +3,7 @@ import axios from 'axios';
 import styles from './allWagers.module.css';
 import useToken from "../hooks/useToken";
 import expiredIcon from "../images/expired.png";
-
+import useProgressTracker from '../hooks/useProgressTracker';
 
 const AllWagers = () => {
   const [wagers, setWagers] = useState([]);
@@ -73,6 +73,7 @@ const AllWagers = () => {
         </tbody>
         </table>
       </div>
+      
     </div>
   )
 }
