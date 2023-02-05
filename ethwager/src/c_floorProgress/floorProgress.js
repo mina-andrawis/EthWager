@@ -4,12 +4,17 @@ import {projectNames, projectSlugs} from "../common.js"
 import useProgressTracker from '../hooks/useProgressTracker.js';
 
 const FloorProgress = ({ wagerId }) => {
-  const { retrieveProgress } = useProgressTracker(wagerId);
+  const { setProgress,formData } = useProgressTracker(wagerId);
   
-  <useProgressTracker wagerId={wagerId} />
+  useEffect(() => {
+    setProgress(wagerId)
+  }, [wagerId]);
+  
+
 
   return (
-    <td>{retrieveProgress}</td>
+    <td>{formData.floorArray}
+    </td>
   );
 
 };
