@@ -49,9 +49,6 @@ const useProgressTracker = () => {
                 curr_floor: response.data.stats.floor_price,
                 cur_date: new Date().getDate() });
             })
-            .then(() => {
-              updateProgress(currData);
-            })
           }
           else {
             console.log("slug is empty");
@@ -63,18 +60,24 @@ const useProgressTracker = () => {
 
     
     
-    const updateProgress = (currData) => {
-      if (currData.pid !== '') {
-        axios.patch(`http://localhost:3001/update-progress`, currData)
-          .then(response => {
-            console.log("inside updateProgress");
-            console.log(response.data);
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }
-    };
+      useEffect(() => {
+        const updateProgress = (currData) => {
+          if (currData.pid !== '') {
+            axios.patch(`http://localhost:3001/update-progress`, currData)
+              .then(response => {
+                console.log("inside updateProgress");
+                console.log(response.data);
+              })
+              .catch(error => {
+                console.error(error);
+              });
+          }
+        };
+        updateProgress(currData);
+      }, [currData, progressData]);
+
+
+
     
 
     const addProgress = (wager_id) => {
