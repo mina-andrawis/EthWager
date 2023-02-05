@@ -82,9 +82,9 @@ app.get("/progress/:wagerId", async (request, response) => {
 
 app.patch("/update-progress", async (request, response) => {
   try {
-  const id = request.body._id;
-  const newFloor = request.body.floor_data;
-  const currentDate = new Date();
+  const id = request.body.pid;
+  const newFloor = request.body.curr_floor;
+  const currentDate = request.body.curr_date;
   
   const updatedProgress = await progressModel.findOneAndUpdate(
     {_id: id}, 

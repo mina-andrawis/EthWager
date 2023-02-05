@@ -17,7 +17,7 @@ const AllWagers = () => {
       .get(`http://localhost:3001/wagers/${userId}`)
       .then(response => {
         setWagers(response.data);
-        console.log(response.data);
+        //console.log(response.data);
 
       })
       .catch(error => {
