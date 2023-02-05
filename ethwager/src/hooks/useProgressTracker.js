@@ -4,7 +4,7 @@ import {projectNames, projectSlugs, findProjSlug} from "../common.js"
 
 const useProgressTracker = () => {
     
-    const [projectName, setProjectName] = useState('');
+    const [projName, setProjName] = useState('');
     const [progressId, setProgressId] = useState('');
     const [currData, setCurrData] = useState({
       pid: '',
@@ -17,12 +17,11 @@ const useProgressTracker = () => {
       date_data: []
     });
 
-    var slug;
     const retrieveProgress = (wager_id) => {
         axios.get(`http://localhost:3001/progress/${wager_id}`)
         .then(response => {
           console.log("isnide retrieveProgress");
-            setProjectName(response.data[0].collec_name);
+          setProjName(response.data[0].collec_name);
             setProgressId(response.data[0]._id);
             setProgressData({
               progress_id: response.data[0]._id, 
@@ -30,34 +29,39 @@ const useProgressTracker = () => {
               date_data: response.data[0].date_data });
         })
         .then(() => {
-          slug = findProjSlug(projectName);
-          retrieveCurrentData(slug);
+          
         })
-
         .catch(error => {
           console.log(error);
         });
       }
 
-    const retrieveCurrentData = () => {
-        if (slug !== '') 
-        {
-          axios.get(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
-          .then(response => {
-            console.log("inside retrieveCurrentData")
-            setCurrData({
-              pid: progressId,
-              curr_floor: response.data.stats.floor_price,
-              cur_date: new Date().getDate() });
-          })
-          .then(() => {
-            updateProgress(currData);
-          })
+      var slug = findProjSlug(projName);
+      useEffect(() => {
+        const retrieveCurrentData = (slug) => {
+          if (slug !== '') 
+          {
+            axios.get(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
+            .then(response => {
+              console.log("inside retrieveCurrentData")
+              setCurrData({
+                pid: progressId,
+                curr_floor: response.data.stats.floor_price,
+                cur_date: new Date().getDate() });
+            })
+            .then(() => {
+              updateProgress(currData);
+            })
+          }
+          else {
+            console.log("slug is empty");
+          }
         }
-        else {
-          console.log("slug is empty");
-        }
-      }
+
+          retrieveCurrentData(slug);
+      }, [currData, progressId, slug]);
+
+    
     
     const updateProgress = (currData) => {
       if (currData.pid !== '') {
