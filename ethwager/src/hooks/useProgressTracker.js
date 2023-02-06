@@ -47,7 +47,7 @@ const useProgressTracker = () => {
               setCurrData({
                 pid: progressId,
                 curr_floor: response.data.stats.floor_price,
-                cur_date: new Date().getDate() });
+                curr_date: new Date()});
             })
           }
           else {
@@ -56,10 +56,8 @@ const useProgressTracker = () => {
         }
 
           retrieveCurrentData(slug);
-      }, [currData, progressId, slug]);
+      }, [progressId, slug]);
 
-    
-    
       useEffect(() => {
         const updateProgress = (currData) => {
           if (currData.pid !== '') {
@@ -74,7 +72,7 @@ const useProgressTracker = () => {
           }
         };
         updateProgress(currData);
-      }, [currData, progressData]);
+      }, [currData]);
 
 
 
