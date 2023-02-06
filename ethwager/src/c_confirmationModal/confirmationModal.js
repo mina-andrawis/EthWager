@@ -43,6 +43,8 @@ const ConfirmationModal = (props) => {
         console.log(response.data);
         progressData.wager_id = response.data._id;
         progressData.collec_name = response.data.collec_name;
+        progressData.floor_data.push(response.data.initial_floor_price);
+        progressData.date_data.push(response.data.expiration_date);
         setIsSubmitted(true);
 
         // Make a second API call with the updated wagerData object

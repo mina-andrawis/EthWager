@@ -54,7 +54,6 @@ const useProgressTracker = () => {
             console.log("slug is empty");
           }
         }
-
           retrieveCurrentData(slug);
       }, [progressId, slug]);
 
@@ -73,10 +72,6 @@ const useProgressTracker = () => {
         };
         updateProgress(currData);
       }, [currData]);
-
-
-
-    
 
     const addProgress = (wager_id) => {
       retrieveProgress(wager_id);
