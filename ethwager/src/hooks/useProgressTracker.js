@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import {projectNames, projectSlugs, findProjSlug} from "../common.js"
 
@@ -17,26 +17,33 @@ const useProgressTracker = () => {
       date_data: []
     });
 
+    var wagerId = '';
+
+    // ********************************************************************************************** //
+    // Retrieve progress data from database, takes wager_id as parameter //
+    // ********************************************************************************************** //
     const retrieveProgress = (wager_id) => {
         axios.get(`http://localhost:3001/progress/${wager_id}`)
         .then(response => {
           console.log("isnide retrieveProgress");
+          wagerId = wager_id;
           setProjName(response.data[0].collec_name);
-            setProgressId(response.data[0]._id);
-            setProgressData({
-              progress_id: response.data[0]._id, 
-              floor_data: response.data[0].floor_data, 
-              date_data: response.data[0].date_data });
-        })
-        .then(() => {
-          
+          setProgressId(response.data[0]._id);
+          setProgressData({
+            progress_id: response.data[0]._id, 
+            floor_data: response.data[0].floor_data, 
+            date_data: response.data[0].date_data });
         })
         .catch(error => {
           console.log(error);
         });
       }
 
+
       var slug = findProjSlug(projName);
+      // ********************************************************************************************** //
+      // Retrieve current floor price from OpenSea API, only runs on change of progressId or slug //
+      // ********************************************************************************************** //
       useEffect(() => {
         const retrieveCurrentData = (slug) => {
           if (slug !== '') 
@@ -54,7 +61,7 @@ const useProgressTracker = () => {
             console.log("slug is empty");
           }
         }
-          retrieveCurrentData(slug);
+        retrieveCurrentData(slug);
       }, [progressId, slug]);
 
       useEffect(() => {
@@ -73,10 +80,18 @@ const useProgressTracker = () => {
         updateProgress(currData);
       }, [currData]);
 
-    const addProgress = (wager_id) => {
-      retrieveProgress(wager_id);
-    }
+      const addProgress = useCallback((wager_id) => {
+        retrieveProgress(wager_id);
+      })
 
+      useEffect(() => {
+        if (progressData.date_data.length > 0) {
+          const intervalId = setInterval(() => {
+            addProgress(wagerId);
+          }, 10000);
+          return () => clearInterval(intervalId);
+        }
+      }, [progressData.date_data, addProgress, wagerId]);
 
   return {
     setProgress: addProgress,
