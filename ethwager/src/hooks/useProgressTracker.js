@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import axios from 'axios';
 import {projectNames, projectSlugs, findProjSlug} from "../common.js"
 
@@ -17,7 +17,20 @@ const useProgressTracker = () => {
       date_data: []
     });
 
-    var wagerId = '';
+    var wagerId = useRef('');
+
+    const addProgress = useCallback((wager_id) => {
+      retrieveProgress(wager_id);
+    }, [])
+
+    //add progress every 24 hours
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        addProgress(wagerId);
+        window.location.reload();
+      }, 10000);
+      return () => clearInterval(intervalId);
+  }, [progressData.date_data, addProgress, wagerId]);
 
     // ********************************************************************************************** //
     // Retrieve progress data from database, takes wager_id as parameter //
@@ -80,18 +93,9 @@ const useProgressTracker = () => {
         updateProgress(currData);
       }, [currData]);
 
-      const addProgress = useCallback((wager_id) => {
-        retrieveProgress(wager_id);
-      })
 
-      useEffect(() => {
-        if (progressData.date_data.length > 0) {
-          const intervalId = setInterval(() => {
-            addProgress(wagerId);
-          }, 10000);
-          return () => clearInterval(intervalId);
-        }
-      }, [progressData.date_data, addProgress, wagerId]);
+
+     
 
   return {
     setProgress: addProgress,

@@ -8,7 +8,7 @@ const FloorProgress = ({ wagerId }) => {
   
   useEffect(() => {
     setProgress(wagerId)
-  }, [wagerId]);
+  }, [setProgress, wagerId]);
 
   return (
     <td>{progressData.floor_data}
