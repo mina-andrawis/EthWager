@@ -5,6 +5,7 @@ import {projectNames, projectSlugs, findProjSlug} from "../common.js"
 const useProgressTracker = () => {
     
     const [projName, setProjName] = useState('');
+    const [expiration, setExpiration] = useState(new Date());
     const [progressId, setProgressId] = useState('');
     const [currData, setCurrData] = useState({
       pid: '',
@@ -28,7 +29,7 @@ const useProgressTracker = () => {
       const intervalId = setInterval(() => {
         addProgress(wagerId);
         window.location.reload();
-      }, 10000);
+      }, 24 * 60 * 60 * 1000);
       return () => clearInterval(intervalId);
   }, [progressData.date_data, addProgress, wagerId]);
 
@@ -41,6 +42,7 @@ const useProgressTracker = () => {
           console.log("isnide retrieveProgress");
           wagerId = wager_id;
           setProjName(response.data[0].collec_name);
+          setExpiration(response.data[0].expiration_date);
           setProgressId(response.data[0]._id);
           setProgressData({
             progress_id: response.data[0]._id, 
@@ -77,6 +79,9 @@ const useProgressTracker = () => {
         retrieveCurrentData(slug);
       }, [progressId, slug]);
 
+      // ********************************************************************************************** //
+      // Update progress associated with a wagerid with currData //
+      // ********************************************************************************************** //
       useEffect(() => {
         const updateProgress = (currData) => {
           if (currData.pid !== '') {
