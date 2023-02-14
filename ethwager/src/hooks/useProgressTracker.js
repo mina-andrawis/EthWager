@@ -37,7 +37,7 @@ const useProgressTracker = () => {
     // Retrieve progress data from database, takes wager_id as parameter //
     // ********************************************************************************************** //
     const retrieveProgress = (wager_id) => {
-        axios.get(`http://localhost:3001/progress/${wager_id}`)
+        axios.get(`http://localhost:3001/wagers/${wager_id}`)
         .then(response => {
           console.log("isnide retrieveProgress");
           wagerId = wager_id;

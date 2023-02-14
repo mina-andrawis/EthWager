@@ -55,31 +55,20 @@ app.get("/wagers/:userId", async (request, response) => {
   }
 });
 
+app.get("/wagers/:wagerId", async (request, response) => {
+  const wagerId = request.params.wagerId;
+  const allwagers = await wagerModel.find({_id: wagerId});
+  
+  try {
+  response.send(allwagers);
+  } catch (error) {
+  response.status(500).send(error);
+  }
+});
+
 // *************** //
 // progress routes //
 // *************** //
-app.post("/create-progress", async (request, response) => {
-  const progress = new progressModel(request.body);
-
-  try {
-    await progress.save();
-    response.send(progress);
-  } catch (error) {
-    response.status(500).send(error);
-  }
-});
-
-app.get("/progress/:wagerId", async (request, response) => {
-  const wagerId = request.params.wagerId;
-  const wagerProgress = await progressModel.find({wager_id: wagerId});
-  
-  try {
-    response.send(wagerProgress);
-  } catch (error) {
-    response.status(500).send(error);
-  }
-});
-
 app.patch("/update-progress", async (request, response) => {
   try {
   const id = request.body.pid;

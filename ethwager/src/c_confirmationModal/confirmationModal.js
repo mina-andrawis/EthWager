@@ -28,35 +28,18 @@ const ConfirmationModal = (props) => {
       collec_name: projName,
       bid_velocity: bid,
       initial_floor_price: floorprice,
-      expiration_date: expirationDate
+      expiration_date: expirationDate,
+      floor_data: [floorprice],
+      date_data: [new Date()]
     }
-    const progressData = {
-      wager_id: null,
-      collec_name: null,
-      user_id: userid,
-      initial_floor: floorprice,
-      floor_data: [],
-      date_data: []
-    }
+
     axios.post('http://localhost:3001/create-wager', wagerData)
       .then(response => {
         console.log(response.data);
-        progressData.wager_id = response.data._id;
-        progressData.collec_name = response.data.collec_name;
-        progressData.floor_data.push(response.data.initial_floor_price);
-        progressData.date_data.push(response.data.expiration_date);
+        wagerData.collec_name = response.data.collec_name;
+        wagerData.floor_data.push(response.data.initial_floor_price);
+        wagerData.date_data.push(response.data.expiration_date);
         setIsSubmitted(true);
-
-        // Make a second API call with the updated wagerData object
-        axios.post('http://localhost:3001/create-progress', progressData)
-          .then(response => {
-            console.log(response.data);
-            setIsSubmitted(true);
-            
-          })
-          .catch(error => {
-            console.log(error);
-          });
       })
       .catch(error => {
         console.log(error);
