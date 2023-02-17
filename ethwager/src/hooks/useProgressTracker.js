@@ -6,7 +6,7 @@ const useProgressTracker = () => {
     
     const [projName, setProjName] = useState('');
     const [expiration, setExpiration] = useState(new Date());
-    const [progressId, setProgressId] = useState('');
+    const [wagerId, setWagerId] = useState('');
     const [currData, setCurrData] = useState({
       pid: '',
       curr_floor: 0,
@@ -18,12 +18,10 @@ const useProgressTracker = () => {
       date_data: []
     });
 
-    var wagerId = '';
-
     const addProgress = useCallback((wager_id) => {
-      retrieveProgress(wager_id);
+      retrieveAndSetProgressData(wager_id);
     }, [])
-
+ 
     //add progress every 24 hours
     useEffect(() => {
       const intervalId = setInterval(() => {
@@ -31,19 +29,18 @@ const useProgressTracker = () => {
         window.location.reload();
       }, 24 * 60 * 60 * 1000);
       return () => clearInterval(intervalId);
-  }, [progressData.date_data, addProgress, wagerId]);
+  }, [addProgress, wagerId]);
 
     // ********************************************************************************************** //
-    // Retrieve progress data from database, takes wager_id as parameter //
+    // Retrieve progress data from database, sets WagerId state variable and executes useEffect hooks //
     // ********************************************************************************************** //
-    const retrieveProgress = (wager_id) => {
+    const retrieveAndSetProgressData = (wager_id) => {
         axios.get(`http://localhost:3001/wager/${wager_id}`)
         .then(response => {
-          console.log("isnide retrieveProgress");
-          wagerId = wager_id;
+          //console.log("isnide retrieveProgress");
           setProjName(response.data[0].collec_name);
           setExpiration(response.data[0].expiration_date);
-          setProgressId(response.data[0]._id);
+          setWagerId(response.data[0]._id);
           setProgressData({
             progress_id: response.data[0]._id, 
             floor_data: response.data[0].floor_data, 
@@ -54,11 +51,11 @@ const useProgressTracker = () => {
         });
       }
 
-
       var slug = findProjSlug(projName);
-      // ********************************************************************************************** //
-      // Retrieve current floor price from OpenSea API, only runs on change of progressId or slug //
-      // ********************************************************************************************** //
+      // ************************************************************************************* //
+      // Retrieve current floor price from OpenSea API, only runs on change of wagerId or slug //
+      // Calls setCurrData(), executing the updateProgress in useEffect                        //
+      // ************************************************************************************* //
       useEffect(() => {
         const retrieveCurrentData = (slug) => {
           if (slug !== '') 
@@ -67,7 +64,7 @@ const useProgressTracker = () => {
             .then(response => {
               console.log("inside retrieveCurrentData")
               setCurrData({
-                pid: progressId,
+                pid: wagerId,
                 curr_floor: response.data.stats.floor_price,
                 curr_date: new Date()});
             })
@@ -77,11 +74,11 @@ const useProgressTracker = () => {
           }
         }
         retrieveCurrentData(slug);
-      }, [progressId, slug]);
+      }, [slug, wagerId]);
 
-      // ********************************************************************************************** //
-      // Update progress associated with a wagerid with currData //
-      // ********************************************************************************************** //
+      // ******************************************************************************************** //
+      // Update progress associated with a wagerid with currData whenever data in currData is changed //
+      // ******************************************************************************************** //
       useEffect(() => {
         const updateProgress = (currData) => {
           if (currData.pid !== '') {
@@ -98,14 +95,10 @@ const useProgressTracker = () => {
         updateProgress(currData);
       }, [currData]);
 
-
-
-     
-
-  return {
-    setProgress: addProgress,
-    progressData
-  }
+    return {
+      setProgress: addProgress,
+      progressData
+    }
 }
 
 export default useProgressTracker;
