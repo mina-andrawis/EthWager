@@ -18,7 +18,7 @@ const useProgressTracker = () => {
       date_data: []
     });
 
-    var wagerId = useRef('');
+    var wagerId = '';
 
     const addProgress = useCallback((wager_id) => {
       retrieveProgress(wager_id);
@@ -37,7 +37,7 @@ const useProgressTracker = () => {
     // Retrieve progress data from database, takes wager_id as parameter //
     // ********************************************************************************************** //
     const retrieveProgress = (wager_id) => {
-        axios.get(`http://localhost:3001/wagers/${wager_id}`)
+        axios.get(`http://localhost:3001/wager/${wager_id}`)
         .then(response => {
           console.log("isnide retrieveProgress");
           wagerId = wager_id;

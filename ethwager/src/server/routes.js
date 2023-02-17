@@ -1,4 +1,5 @@
 const express = require("express");
+const ObjectId = require('mongoose').Types.ObjectId;
 const wagerModel = require("./models/wagerModel")
 const userModel = require("./models/userModel")
 const progressModel = require("./models/progressModel")
@@ -55,7 +56,7 @@ app.get("/wagers/:userId", async (request, response) => {
   }
 });
 
-app.get("/wagers/:wagerId", async (request, response) => {
+app.get("/wager/:wagerId", async (request, response) => {
   const wagerId = request.params.wagerId;
   const allwagers = await wagerModel.find({_id: wagerId});
   
@@ -71,13 +72,14 @@ app.get("/wagers/:wagerId", async (request, response) => {
 // *************** //
 app.patch("/update-progress", async (request, response) => {
   try {
-  const id = request.body.pid;
-  const newFloor = request.body.curr_floor;
+  const o_id = request.body.pid;
+  const currentFloor = request.body.curr_floor;
   const currentDate = request.body.curr_date;
   
-  const updatedProgress = await progressModel.findOneAndUpdate(
-    {_id: id}, 
-    {$push: {floor_data: newFloor, date_data: currentDate}},
+  const updatedProgress = await wagerModel.findByIdAndUpdate(
+    {_id: new ObjectId(o_id)}, 
+    {$push: {floor_data: currentFloor,
+       date_data:currentDate}},
     {new: true}
   );
   

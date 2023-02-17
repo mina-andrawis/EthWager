@@ -30,15 +30,13 @@ const ConfirmationModal = (props) => {
       initial_floor_price: floorprice,
       expiration_date: expirationDate,
       floor_data: [floorprice],
-      date_data: [new Date()]
+      date_data: [expirationDate]
     }
 
     axios.post('http://localhost:3001/create-wager', wagerData)
       .then(response => {
         console.log(response.data);
         wagerData.collec_name = response.data.collec_name;
-        wagerData.floor_data.push(response.data.initial_floor_price);
-        wagerData.date_data.push(response.data.expiration_date);
         setIsSubmitted(true);
       })
       .catch(error => {
