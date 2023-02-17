@@ -13,7 +13,7 @@ const useProgressTracker = () => {
       cur_date: 0
     });
     const [progressData, setProgressData] = useState({
-      progress_id: '',
+      wager_id: '',
       floor_data: [],
       date_data: []
     });
@@ -42,7 +42,7 @@ const useProgressTracker = () => {
           setExpiration(response.data[0].expiration_date);
           setWagerId(response.data[0]._id);
           setProgressData({
-            progress_id: response.data[0]._id, 
+            wager_id: response.data[0]._id, 
             floor_data: response.data[0].floor_data, 
             date_data: response.data[0].date_data });
         })
@@ -62,7 +62,7 @@ const useProgressTracker = () => {
           {
             axios.get(`https://api.opensea.io/api/v1/collection/${slug}/stats`)
             .then(response => {
-              console.log("inside retrieveCurrentData")
+              //console.log("inside retrieveCurrentData")
               setCurrData({
                 pid: wagerId,
                 curr_floor: response.data.stats.floor_price,
