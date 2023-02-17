@@ -61,15 +61,17 @@ const AllWagers = () => {
         </thead>
         <tbody>
             {wagers.map((wager, index) => (
-            <tr key={index}>
-                <td className={styles.tableData}>{wager.collec_name}</td>
-                <td className={styles.tableData}>{wager.bid_velocity}</td>
-                <td className={styles.tableData}>{wager.initial_floor_price}</td>
-                <td className={styles.tableData}>{(new Date(wager.expiration_date)).toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric' })}</td>
+              <>
+                <tr key={index}>
+                  <td className={styles.tableData}>{wager.collec_name}</td>
+                  <td className={styles.tableData}>{wager.bid_velocity}</td>
+                  <td className={styles.tableData}>{wager.initial_floor_price}</td>
+                  <td className={styles.tableData}>{(new Date(wager.expiration_date)).toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric' })}</td>
+                  {calculateExpiredStatus(wager)}
+                  <td> {handleExpiredIcon(wager.expiredStatus)} </td>
+                </tr>
                 <FloorProgress wagerId={wager._id} />
-                {calculateExpiredStatus(wager)}
-                <td> {handleExpiredIcon(wager.expiredStatus)} </td>
-            </tr>
+              </>
             ))}
         </tbody>
         </table>
