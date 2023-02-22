@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './floorProgress.module.css';
+import classnames from 'classnames';
 import useProgressTracker from '../hooks/useProgressTracker.js';
 
 const FloorProgress = ({ wagerId }) => {
@@ -17,6 +18,14 @@ const FloorProgress = ({ wagerId }) => {
 
   const formatDate = (date) => {
     return (new Date(date)).toLocaleDateString("en-US", {month: '2-digit', day: '2-digit'})
+  }
+
+  //return true if current price is above initial price
+  const IsAboveInitial = (currPrice, initialPrice) => {
+    if (currPrice > initialPrice) {
+      return true
+    }
+    return false;
   }
 
 
@@ -40,11 +49,11 @@ const FloorProgress = ({ wagerId }) => {
         <div key={progress.wagerId} className={styles.progressContainer}>
           <tr key={`${progress.wagerId}-data`} className={styles.progress}>
             <td className={styles.progress}>
-              <span className={styles.progressDate}>
+              <span className={styles.progressDate} >
                 {formatDate(progressData.date_data[index])}
               </span>
               <td style={{ height:5 }}></td>
-              <span className={styles.progressEth}>
+              <span className={IsAboveInitial(progressData.floor_data[index],progressData.floor_data[0]) ? classnames(styles.progress, styles.aboveInital) : classnames(styles.progressEth, styles.belowInitial) } >
                 {formatEth(progressData.floor_data[index])}
               </span>
             </td>
