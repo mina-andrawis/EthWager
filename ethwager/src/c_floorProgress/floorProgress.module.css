@@ -6,16 +6,14 @@
     align-items: center;
     margin-top: 10px;
     min-height: 100px;
-    flex-wrap: wrap;
-    overflow: auto;
+    max-width: 100px;
+    overflow: show;
   }
   
 
 .progressContainer {
     display: flex;
     flex-direction: row;
-    max-width: min-content;
-    
   }
   
 
@@ -28,13 +26,15 @@
 .progressDate {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    margin: 0;
 }
 
 .progressEth {
     display: flex;
     flex-direction: row;
     min-width: max-content;
-    width: 100%;
+    
 }
+
+
 
