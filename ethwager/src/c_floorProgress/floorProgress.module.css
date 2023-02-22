@@ -1,24 +1,36 @@
+/* floorProgress.module.css */
+
 .allProgressContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  min-height: 100px;
+}
+
+.progressContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    overflow: scroll;
+    max-width: min-content;
+  }
+  
 
-  }
-  
-  .progressContainer {
+.progress td{
+  font-size: 15px;
+  color: cornsilk;
+  margin-right: 10px;
+}
+
+.progressDate {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-  }
-  
-  .progress {
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 5px;
-  }
-  
+    flex-direction: row;
+    width: 100%;
+}
+
+.progressEth {
+    display: flex;
+    flex-direction: row;
+    min-width: max-content;
+    width: 100%;
+}
+
