@@ -20,20 +20,19 @@ const FloorProgress = ({ wagerId }) => {
   }
 
   return (
-    <>
-      {progressData.floor_data.map((progresses,index) => (
-        <div classname={styles.progressContainer}>
-          <tr classname={styles.progress} key={index}>
-            <td classname={styles.progress}>{formatDate(progressData.date_data[index])}</td>
+    <div className={styles.allProgressContainer}>
+      {progressData.floor_data.map((progress, index) => (
+        <div key={progress.wagerId} className={styles.progressContainer}>
+          <tr key={`${progress.wagerId}-date`} className={styles.progress}>
+            <td className={styles.progress}>{formatDate(progressData.date_data[index])}</td>
           </tr>
-          <tr key={index}>
-            <td classname={styles.progress}>{formatEth(progressData.floor_data[index])}</td>
+          <tr key={`${progress.wagerId}-eth`}>
+            <td className={styles.progress}>{formatEth(progressData.floor_data[index])}</td>
           </tr>
         </div>
       ))}
-    </>
+    </div>
   );
-
 };
 
 export default FloorProgress;
