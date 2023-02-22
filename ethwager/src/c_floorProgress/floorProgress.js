@@ -16,7 +16,7 @@ const FloorProgress = ({ wagerId }) => {
   }
 
   const formatDate = (date) => {
-    return (new Date(date)).toLocaleDateString("en-US", {year: '2-digit', month: '2-digit', day: '2-digit'})
+    return (new Date(date)).toLocaleDateString("en-US", {month: '2-digit', day: '2-digit'})
   }
 
 
@@ -33,7 +33,7 @@ const FloorProgress = ({ wagerId }) => {
               {"Floor Price (ETH)"}
               </span>
             </td>
-        </tr> 
+          </tr> 
         </div>
       {progressData.floor_data.map((progress, index) => (
         <div key={progress.wagerId} className={styles.progressContainer}>

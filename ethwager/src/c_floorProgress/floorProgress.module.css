@@ -1,17 +1,21 @@
 /* floorProgress.module.css */
 
 .allProgressContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 10px;
-  min-height: 100px;
-}
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    min-height: 100px;
+    flex-wrap: wrap;
+    overflow: auto;
+  }
+  
 
 .progressContainer {
     display: flex;
     flex-direction: row;
     max-width: min-content;
+    
   }
   
 
