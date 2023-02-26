@@ -20,13 +20,17 @@ const FloorProgress = ({ wagerId }) => {
     return (new Date(date)).toLocaleDateString("en-US", {month: '2-digit', day: '2-digit'})
   }
 
-  //return true if current price is above initial price
-  const IsAboveInitial = (currPrice, initialPrice) => {
-    if (currPrice > initialPrice) {
-      return true
+  //determines if the current price is above or below the initial price
+  const IsInTheMoney = (bidVelocity, currPrice, initialPrice) => {
+    if (bidVelocity === 'bullish' && currPrice > initialPrice) {
+      return true;
+    } 
+    else if (bidVelocity === 'bearish' && currPrice < initialPrice) {
+      return true;
     }
     return false;
   }
+  
 
 
   return (
@@ -53,7 +57,7 @@ const FloorProgress = ({ wagerId }) => {
                 {formatDate(progressData.date_data[index])}
               </span>
               <td style={{ height:5 }}></td>
-              <span className={IsAboveInitial(progressData.floor_data[index],progressData.floor_data[0]) ? classnames(styles.progress, styles.aboveInital) : classnames(styles.progressEth, styles.belowInitial) } >
+              <span className={IsInTheMoney(progressData.bidVelocity,progressData.floor_data[index],progressData.floor_data[0]) ? classnames(styles.progress, styles.aboveInital) : classnames(styles.progressEth, styles.belowInitial) } >
                 {formatEth(progressData.floor_data[index])}
               </span>
             </td>

@@ -5,7 +5,6 @@ import {projectNames, projectSlugs, findProjSlug} from "../common.js"
 const useProgressTracker = () => {
     
     const [projName, setProjName] = useState('');
-    const [expiration, setExpiration] = useState(new Date());
     const [wagerId, setWagerId] = useState('');
     const [currData, setCurrData] = useState({
       pid: '',
@@ -14,6 +13,8 @@ const useProgressTracker = () => {
     });
     const [progressData, setProgressData] = useState({
       wager_id: '',
+      expiration_date: new Date(),
+      bidVelocity: '',
       floor_data: [],
       date_data: []
     });
@@ -39,10 +40,11 @@ const useProgressTracker = () => {
         .then(response => {
           //console.log("isnide retrieveProgress");
           setProjName(response.data[0].collec_name);
-          setExpiration(response.data[0].expiration_date);
           setWagerId(response.data[0]._id);
           setProgressData({
             wager_id: response.data[0]._id, 
+            expiration_date: response.data[0].expiration_date,
+            bidVelocity: response.data[0].bid_velocity,
             floor_data: response.data[0].floor_data, 
             date_data: response.data[0].date_data });
         })
