@@ -21,6 +21,12 @@ const WagerSchema = new mongoose.Schema({
       type: String,
       required: false,
     },
+    floor_data: {
+      type: Array
+    },
+    date_data: {
+      type: Array
+    },
   });
 
 const wagerModel = mongoose.model("Wager", WagerSchema);

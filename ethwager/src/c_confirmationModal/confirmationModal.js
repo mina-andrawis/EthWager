@@ -6,10 +6,9 @@ import bearishImage from "../images/icons8-bearish-32.png";
 import bullishImage from "../images/icons8-bullish-32.png";
 
 
-
 const ConfirmationModal = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { showBidModal,userid,  proj, bid, expirationLength, projName, floorprice} = props;
+  const { showBidModal, userid,  proj, bid, expirationLength, projName, floorprice} = props;
 
   var currDate = new Date();
   var expirationDate = new Date();
@@ -24,18 +23,21 @@ const ConfirmationModal = (props) => {
   const handleConfirm = () => {
     setIsSubmitted(false);
 
-    const data = {
+    const wagerData = {
       user_id: userid,
       collec_name: projName,
       bid_velocity: bid,
       initial_floor_price: floorprice,
-      expiration_date: expirationDate
+      expiration_date: expirationDate,
+      floor_data: [floorprice],
+      date_data: [new Date()]
     }
-    axios.post('http://localhost:3001/create-wager', data)
+
+    axios.post('http://localhost:3001/create-wager', wagerData)
       .then(response => {
         console.log(response.data);
+        wagerData.collec_name = response.data.collec_name;
         setIsSubmitted(true);
-        
       })
       .catch(error => {
         console.log(error);

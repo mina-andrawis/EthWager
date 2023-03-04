@@ -1,0 +1,49 @@
+/* floorProgress.module.css */
+
+.allProgressContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 100px;
+    max-width: 100px;
+    margin-bottom: 40px;
+    overflow: show;
+  }
+  
+
+.progressContainer {
+    display: flex;
+    flex-direction: row;
+  }
+  
+
+.progress td{
+  font-size: 14px;
+  color: cornsilk;
+  margin-right: 10px;
+  padding-left: 5px !important;
+  padding-right: 10px !important;
+}
+
+.progressDate {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.progressEth {
+    display: flex;
+    flex-direction: row;
+    min-width: max-content;
+    
+}
+
+.aboveInital {
+    color: green;
+}
+
+.belowInitial {
+    color: red;
+}
+
+

@@ -3,7 +3,7 @@ import axios from 'axios';
 import styles from './allWagers.module.css';
 import useToken from "../hooks/useToken";
 import expiredIcon from "../images/expired.png";
-
+import FloorProgress from '../c_floorProgress/floorProgress.js';
 
 const AllWagers = () => {
   const [wagers, setWagers] = useState([]);
@@ -17,7 +17,7 @@ const AllWagers = () => {
       .get(`http://localhost:3001/wagers/${userId}`)
       .then(response => {
         setWagers(response.data);
-        console.log(response.data);
+        //console.log(response.data);
 
       })
       .catch(error => {
@@ -25,7 +25,7 @@ const AllWagers = () => {
       });
   }, []);
 
-
+  
   const handleExpiredIcon = expiredStatus => {
     if(expiredStatus === true) 
     {
@@ -47,34 +47,42 @@ const AllWagers = () => {
 
   return (
     <div className={styles.wagerContainer}>
-        <div className={styles.styledTable}>
-          <h2>Your Wagers</h2>
+      <div className={styles.styledTable}>
+        <h2>Your Wagers</h2>
         <table>
-        <thead>
+          <thead>
             <tr>
-            <th>Project Name</th>
-            <th>Bid</th>
-            <th>Initial Floor Price</th>
-            <th>Expiration Date</th>
-            <th></th>
+              <th>Project Name</th>
+              <th>Bid</th>
+              <th>Initial Floor Price</th>
+              <th>Expiration Date</th>
+              <th></th>
             </tr>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody>
             {wagers.map((wager, index) => (
-            <tr key={index}>
-                <td className={styles.tableData}>{wager.collec_name}</td>
-                <td className={styles.tableData}>{wager.bid_velocity}</td>
-                <td className={styles.tableData}>{wager.initial_floor_price}</td>
-                <td className={styles.tableData}>{(new Date(wager.expiration_date)).toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric' })}</td>
-                {calculateExpiredStatus(wager)}
-                <td> {handleExpiredIcon(wager.expiredStatus)} </td>
-            </tr>
+              <React.Fragment key={wager._id}>
+                <tr>
+                  <td className={styles.tableData}>{wager.collec_name}</td>
+                  <td className={styles.tableData}>{wager.bid_velocity}</td>
+                  <td className={styles.tableData}>{wager.initial_floor_price}</td>
+                  <td className={styles.tableData}>
+                    {(new Date(wager.expiration_date)).toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric' })}
+                  </td>
+                  {calculateExpiredStatus(wager)}
+                  <td>
+                    {handleExpiredIcon(wager.expiredStatus)}
+                  </td>
+                </tr>
+                <FloorProgress wagerId={wager._id} />
+              </React.Fragment>
             ))}
-        </tbody>
+          </tbody>
         </table>
       </div>
     </div>
-  )
+  );
+  
 }
 
 export default AllWagers;
